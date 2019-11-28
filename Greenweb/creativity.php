@@ -7,9 +7,17 @@
             
             <h3 class="mb-0">text</h3>
             <div class="subheading mb-3">text</div>
+              Telefone produziert: <span id="mobilephoneCounter"></span>
+              <br>
+              Quelle: gartner.com(1943 Mio Telefone pro Jahr)
+            
             <p>
               
               <!-- text -->
+                
+                
+                
+
               
               </p>
           </div>
@@ -17,11 +25,22 @@
             <span class="text-primary">September 2008 - June 2010</span>
           </div>
         </div>
+          
+          
 
         <br>
         
 
         
       </div>
+        <script>
+            var i2 = 0;
+            var inv2 = setInterval(function() {
+                if(i2 < 1943000000)
+                    document.getElementById("mobilephoneCounter").innerHTML = ++i2;
+                else
+                    clearInterval(inv2);
+            }   , 15);
+        </script>
 
     </section>
