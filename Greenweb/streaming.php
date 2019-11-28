@@ -2,20 +2,20 @@
 .topright {
     position: absolute;
     right: 50px;
-    height: 500px;
-    width: 40%;
+    height: 300px;
+    width: 25%;
     background-image: url("img/tree.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
-    font-size: 200px;
+    font-size: 100px;
     color: #01450b;
 }
 </style> 
 
 <hr class="m-0">
-    <section class="resume-section1 p-3 p-lg-5 d-flex justify-content-center" id="streaming">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
       <div class="w-100">
         <h2 class="mb-5">Streaming</h2>
 <!--        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">-->
@@ -37,15 +37,16 @@
                       </form>
           </div>
             <br>
-            <div id="plot" class="hide">
-                <div class="topright">
-                    <span id="counter" class="counter"></span> 
-                    
-                </div>
             <div id="title" class="hide">
               <h3 class="mb-0"><div id="result"></div></h3>
 
             </div>
+              <div id="plot" class="hide">
+                <div class="topright">
+                    <span id="counter" class="counter"></span> 
+                    
+                </div>
+            
                     <div id="myDiv1"></div>      
             </div>
              
