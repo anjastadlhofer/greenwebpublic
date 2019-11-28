@@ -76,9 +76,10 @@
           <span class="text-primary">Web</span>
         </h1>
         <div class="subheading mb-5">FH Joanneum
-          <a href="mailto:name@email.com">test@edu.fh-joanneum.at</a>
+          <a href="mailto:name@email.com">info@fh-joanneum.at</a>
         </div>
-        <p class="lead mb-5">Erklärung</p>
+        <p class="lead mb-5">Diese Website dient zur Veranschaulichung des <b>Energieverbrauches</b> bezogen auf <b>Webanwendungen</b> wie z.B. Streaming, Blogs, Webshops etc. Folgend befinden sich verschiedene interaktive Visualisierungen basierend auf eigenen Messungen. Diese Website inkl. der relevanten Messungen entstanden im Zuge der bereichsübergreifenden Projektarbeit von IMA17. 
+          </p>
         <div class="social-icons">
           <a href="#">
             <i class="fab fa-baby"></i>
