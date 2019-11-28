@@ -1,9 +1,25 @@
- <hr class="m-0">
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
+<style type="text/css">
+.topright {
+    position: absolute;
+    right: 50px;
+    height: 500px;
+    width: 40%;
+    background-image: url("img/tree.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 200px;
+    color: #01450b;
+}
+</style> 
+
+<hr class="m-0">
+    <section class="resume-section1 p-3 p-lg-5 d-flex justify-content-center" id="streaming">
       <div class="w-100">
         <h2 class="mb-5">Streaming</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="">     
+<!--        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">-->
+          <div>     
               
               <form>
   Wähle die Qualität des Streams aus?<br>
@@ -20,16 +36,17 @@
   <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Slow<br>
                       </form>
           </div>
-               <br>
-              <div id="title" class="hide">
+            <br>
+            <div id="plot" class="hide">
+                <div class="topright">
+                    <span id="counter" class="counter"></span> 
+                    
+                </div>
+            <div id="title" class="hide">
               <h3 class="mb-0"><div id="result"></div></h3>
 
-                  </div>
-                <div id="plot" class="hide">
-                <div id="myDiv1"></div>
-            <img src="img/tree.png" height="420" class="tree">
-                  <br>
-              <span id="counter" class="counter"></span> 
+            </div>
+                    <div id="myDiv1"></div>      
             </div>
              
               
@@ -363,14 +380,14 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
               
 <script>
 var i = 0;var inv = setInterval(function() {
-    if(i < 25000)
+    if(i < 5000)
         document.getElementById("counter").innerHTML = ++i;
     else
         clearInterval(inv);
-}, 3000 / 100);
+}, 1);
 </script>
               
-            </div>
+           
           </div>
         </div>
 </section>
