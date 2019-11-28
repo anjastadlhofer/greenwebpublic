@@ -3,8 +3,7 @@
       <div class="w-100">
         <h2 class="mb-5">Streaming</h2>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-               
+          <div class="">     
               
               <form>
   Wähle die Qualität des Streams aus?<br>
@@ -16,27 +15,27 @@
         <div id="speed" class="hide" >
                   <form>
           Wähle die Geschwindigkeit des Streams aus?<br>
-  <input type="radio" name="speed1" onclick="_serachF();"/> Fast<br>
-  <input type="radio" name="speed1" onclick="_serachM();"/> Medium<br>
-  <input type="radio" name="speed1" onclick="_serachS();"/> Slow<br>
+  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Fast<br>
+  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Medium<br>
+  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Slow<br>
                       </form>
           </div>
                <br>
               <div id="title" class="hide">
               <h3 class="mb-0"><div id="result"></div></h3>
-                  <div id="result"></div>
 
+                  </div>
+                <div id="plot" class="hide">
                 <div id="myDiv1"></div>
             <img src="img/tree.png" height="420" class="tree">
                   <br>
-              <span id="counter" class="counter"></span>
-                  
+              <span id="counter" class="counter"></span> 
             </div>
              
               
               
               
-              <div id="1920f" class="hide">
+              <div id="1920schneller" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -65,7 +64,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="1920m" class="hide">
+              <div id="1920mittlerer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -94,7 +93,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="1920s" class="hide">
+              <div id="1920langsamer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -123,7 +122,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="1280f" class="hide">
+              <div id="1280schneller" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -152,7 +151,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="1280m" class="hide">
+              <div id="1280mittlerer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -181,7 +180,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="1280s" class="hide">
+              <div id="1280langsamer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -210,7 +209,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="640f" class="hide">
+              <div id="640schneller" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -239,7 +238,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="640m" class="hide">
+              <div id="640mittlerer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -275,7 +274,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>
               
               
-              <div id="640s" class="hide">
+              <div id="640langsamer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
 $result1 = mysqli_query ($db_link, $sql1 );
@@ -312,76 +311,59 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
         }
         
         function show1(){
-                  document.getElementById('speed').style.display ='block';
-                    document.getElementsByName('hide_extra').style.display ='none';
+            document.getElementById('speed').style.display ='block';
+            
+            var ele1 = document.getElementsByName('speed1');
+            var ele = document.getElementsByName('quality');
+            var stream = "";
+            var q = "";
+            var s = "";
+            var list = ["schneller", "mittlerer","langsamer"];
+            
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked){
+                    q = ele[i].value;
                 }
+            }
+            for(i = 0; i < ele1.length; i++) {
+                if(ele1[i].checked){                     
+                    s = ele1[i].value;
+                }
+            }
+            show2()
+            document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
+
+            for(i = 0; i < list.length; i++){
+                if(list[i] == s){
+                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
+                    document.getElementById('plot').style.display ='block';
+                    undo();
+                    document.getElementById(stream).style.display ='block';
+                }
+            else{
+                document.getElementById("result").innerHTML = "Bitte Geschwindikeit auswählen!"
+                document.getElementById('title').style.display ='block';
+                }
+            }
+        }
         
         function undo(){
-            document.getElementById('1920f').style.display = 'none';
-            document.getElementById('1920m').style.display = 'none';
-            document.getElementById('1920s').style.display = 'none';
-            document.getElementById('1280f').style.display = 'none';
-            document.getElementById('1280m').style.display = 'none';
-            document.getElementById('1280s').style.display = 'none';
-            document.getElementById('640f').style.display = 'none';
-            document.getElementById('640m').style.display = 'none';
-            document.getElementById('640s').style.display = 'none';
+            document.getElementById('1920schneller').style.display = 'none';
+            document.getElementById('1920mittlerer').style.display = 'none';
+            document.getElementById('1920langsamer').style.display = 'none';
+            document.getElementById('1280schneller').style.display = 'none';
+            document.getElementById('1280mittlerer').style.display = 'none';
+            document.getElementById('1280langsamer').style.display = 'none';
+            document.getElementById('640schneller').style.display = 'none';
+            document.getElementById('640mittlerer').style.display = 'none';
+            document.getElementById('640langsamer').style.display = 'none';
         }
         
-        function _serachF(){
-            var ele = document.getElementsByName('quality');
-            var stream = "";
-            
-            
-            for(i = 0; i < ele.length; i++) { 
-                if(ele[i].checked)                
-                stream = ele[i].value + "f"
-                document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ele[i].value +"p Video mit schneller Geschwindigkeit";
-            }
-            show2();
-            undo();
-            document.getElementById(stream).style.display ='block';
-            
-                
-        }
-       
-        function _serachM(){
-            var ele = document.getElementsByName('quality');
-            var stream = "";
-            
-            
-            for(i = 0; i < ele.length; i++) { 
-                if(ele[i].checked)                
-                stream = ele[i].value + "m"
-                document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ele[i].value +"p Video mit mittlerer Geschwindigkeit"; 
-            }
-            show2();
-            undo();
-            document.getElementById(stream).style.display ='block';
-            
-                
-        }
-        
-        function _serachS(){
-            var ele = document.getElementsByName('quality');
-            var stream = "";
-            
-            for(i = 0; i < ele.length; i++) { 
-                if(ele[i].checked)                
-                stream = ele[i].value + "s"
-                document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ele[i].value +"p Video mit langsamer Geschwindigkeit";
-            }
-            show2();
-            undo();
-            document.getElementById(stream).style.display ='block';
-            
-                
-        }
     </script>
               
 <script>
 var i = 0;var inv = setInterval(function() {
-    if(i < 250)
+    if(i < 25000)
         document.getElementById("counter").innerHTML = ++i;
     else
         clearInterval(inv);
