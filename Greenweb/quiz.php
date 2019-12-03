@@ -1,3 +1,19 @@
+<style>
+    /* Submit Button */
+#quiz-wrap input[type=submit] {
+  background: #01450b;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+    
+
+
+</style>
+
 <hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="quiz">
       <div class="w-100">
@@ -8,124 +24,161 @@
             <div class="subheading mb-3">Quiz spielen</div>
            <p>
         <!------------------------------------------------------------------------------------------------------------- -->
-            <div id="quiz"></div>
-            <button id="submit">Submit Quiz</button>
-            <div id="results"></div>
-               
+<form id="quiz-wrap"></form>
               
-               <script>
-            (function() {
-  function buildQuiz() {
-    // we'll need a place to store the HTML output
-    const output = [];
+              
+              <script>
+                  var questions = [
+  {
+    q : "Welche Website verbraucht mehr Strom?",
+    o : [
+        "Statische Website",
+        "Dynamische Website",
+        "Kein Unterschied"
 
-    // for each question...
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-      // we'll want to store the list of answer choices
-      const answers = [];
+    ],
+    a : 1 // arrays start with 0,
+  },
+  {
+    q : "Mit welchem Fortbewegungsmittel kommt man anstatt zu streamen am weitesten?",
+    o : [
+        "Diesel Auto",
+        "Benzin Auto",
+        "Elektroauto",
+        "Flugzeug",
+        "Zug",
+        "Bus"
 
-      // and for each available answer...
-      for (letter in currentQuestion.answers) {
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
+    ],
+    a : 4
+  },
+  {
+    q : "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
+    o : [
+      "400 pounds",
+      "550 pounds",
+      "700 pounds",
+      "750 pounds"
+    ],
+    a : 2
+  },
+  {
+    q : "Which is the seventh planet from the sun?",
+    o : [
+      "Uranus",
+      "Earth",
+      "Pluto",
+      "Mars"
+    ],
+    a : 0
+  },
+  {
+    q : "Which is the largest ocean on Earth?",
+    o : [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean"
+    ],
+    a : 3
+  }
+];
+                  
+                  /* [QUIZ ENGINE] */
+var quiz = {
+  draw : function () {
+  // quiz.draw() : draw the quiz
+
+    // Fetch the HTML quiz wrapper
+    var wrapper = document.getElementById("quiz-wrap");
+
+    // Loop through all the questions
+    // Create all the necessary HTML elements
+    for (var index in questions) {
+      var number = parseInt(index) + 1; // The current question number
+      var qwrap = document.createElement("div"); // A div wrapper to hold this question and options
+      qwrap.classList.add("question"); // CSS class, for cosmetics
+
+      // The question - <h1> header
+      var question = document.createElement("h4");
+      question.innerHTML = number + ") " + questions[index]['q'];
+      qwrap.appendChild(question);
+
+      // The options - <input> radio buttons and <label>
+      for (var oindex in questions[index]['o']) {
+        // The <label> tag
+        var label = document.createElement("label");
+        qwrap.appendChild(label);
+
+        // The <option> tag
+        var option = document.createElement("input");
+        option.type = "radio";
+        option.value = oindex;
+        option.required = true;
+        option.classList.add("oquiz"); // Will explain this later in function submit below
+
+        // Remember that a radio button group must share the same name
+        option.name = "quiz-" + number;
+        label.appendChild(option);
+
+        // Add the option text
+        var otext = document.createTextNode(questions[index]['o'][oindex]);
+        label.appendChild(otext);
       }
 
-      // add this question and its answers to the output
-      output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
-      );
-    });
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join("");
-  }
-
-  function showResults() {
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll(".answers");
-
-    // keep track of user's answers
-    let numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if (userAnswer === currentQuestion.correctAnswer) {
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = "lightgreen";
-      } else {
-        // if answer is wrong or blank
-        // color the answers red
-        answerContainers[questionNumber].style.color = "red";
-      }
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
-
-  const quizContainer = document.getElementById("quiz");
-  const resultsContainer = document.getElementById("results");
-  const submitButton = document.getElementById("submit");
-  const myQuestions = [
-    {
-      question: "Welche Website verbraucht mehr Strom?",
-      answers: {
-        a: "Statische Website",
-        b: "Dynamische Website",
-        c: "Kein Unterschied"
-      },
-      correctAnswer: "b"
-    },
-    {
-      question: "Mit welchem Fortbewegungsmittel kommt man anstatt zu streamen am weitesten?",
-      answers: {
-        a: "Diesel Auto",
-        b: "Benzin Auto",
-        c: "Elektroauto",
-        d: "Flugzeug",
-        e: "Zug",
-        f: "Bus"
-      },
-      correctAnswer: "e"
-    },
-    {
-      question: "Wirst du ab jetzt bewusster im Internet surfen bzw streamen?",
-      answers: {
-        a: "Ja",
-        b: "Nein"
-      },
-      correctAnswer: "a"
+      // Finally, add this question to the main HTML quiz wrapper
+      wrapper.appendChild(qwrap);
     }
-  ];
 
-  // display quiz right away
-  buildQuiz();
+    // Attach submit button + event handler to the quiz wrapper
+    var submitbutton = document.createElement("input");
+    submitbutton.type = "submit";
+    wrapper.appendChild(submitbutton);
+    wrapper.addEventListener("submit", quiz.submit);
+  },
 
-  // on submit, show results
-  submitButton.addEventListener("click", showResults);
-})();
-        </script>
-            
-            
-              
-              
-              
+  submit : function (evt) {
+  // quiz.submit() : Handle the calculations when the user submits to quiz
+
+    // Stop the form from submitting
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    // Remember that we added an "oquiz" class to all the options?
+    // We can easily get all the selected options this way
+    var selected = document.querySelectorAll(".oquiz:checked");
+
+    // Get the score
+    var score = 0;
+    for (var index in questions) {
+      if (selected[index].value == questions[index]['a']) {
+        score++;
+      }
+    }
+
+    // We can calculate the score now
+    var total = selected.length;
+    var percent = score / total ;
+
+    // Update and show the score
+    // Instead of creating elements, we can also directly alter the inner HTML
+    var html = "<h1>";
+    if (percent>=0.7) {
+      html += "WELL DONE!";
+    } else if (percent>=0.4) {
+      html += "NOT BAD!";
+    } else {
+      html += "TRY HARDER!";
+    }
+    html += "</h1>";
+    html += "<div>You scored " + score + " out of " + total + ".</div>";
+    document.getElementById("quiz-wrap").innerHTML = html;
+  }
+};
+
+/* [INIT] */
+window.addEventListener("load", quiz.draw);
+              </script>
               
          <!------------------------------------------------------------------------------------------------------------- -->
 

@@ -1,4 +1,14 @@
- <hr class="m-0">
+<style>
+    p.solid {border-style: solid;
+            align-content: center;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            background-color: #C0E9B5; 
+    }
+</style>
+<!---   #d8f0e8;-->
+
+<hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="creativity">
       <div class="w-100">
         <h2 class="mb-5">Creativity</h2>
@@ -10,19 +20,22 @@
               
             
             <p>
-              
+              <p class="solid">
+                
               <!-- text -->
-                <img src="img/smartphone.png" height="200"><br>
+                <img src="img/smartphone2.png" height="200"><br>
                 Telefone produziert: <span id="mobilephoneCounter"></span>
               <br>
               Quelle: <a href="https://www.gartner.com/en">gartner.com</a>(1943 Mio Telefone pro Jahr 2016)
               <br>
-                
+                  </p>
+                <p class="solid">
                 <br>
-                <img src="img/laptop.png" height="200"><br>
+                <img src="img/monitor.png" height="200"><br>
                 Computer produziert: <span id="computerCounter"></span>
               <br>
               Quelle: <a href="https://www.gartner.com/en">gartner.com</a>(473 Mio Computer pro Jahr 2016)
+                    </p>
                 
                 
 
