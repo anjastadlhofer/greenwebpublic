@@ -5,19 +5,22 @@
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             
-            <h3 class="mb-0">text</h3>
-            <div class="subheading mb-3">text</div>
+            <h3 class="mb-0">Produzierte Resourcen</h3>
+            <div class="subheading mb-3">Hier können Sie die Resourcen betrachten, welche produziert worden sind, seit Sie diese Website besuchen.</div>
               
             
             <p>
               
               <!-- text -->
-                
+                <img src="img/smartphone.png" height="200"><br>
                 Telefone produziert: <span id="mobilephoneCounter"></span>
               <br>
               Quelle: gartner.com(1943 Mio Telefone pro Jahr)
-              <br><br>
-                Telefone produziert: <span id="computerCounter"></span>
+              <br>
+                
+                <br>
+                <img src="img/laptop.png" height="200"><br>
+                Computer produziert: <span id="computerCounter"></span>
               <br>
               Quelle: gartner.com(473 Mio Computer pro Jahr)
                 
@@ -45,7 +48,7 @@
                     document.getElementById("mobilephoneCounter").innerHTML = ++i2;
                 else
                     clearInterval(inv2);
-            }   , 15);
+            }   , 14);
         </script>
         
          <script>
@@ -55,7 +58,7 @@
                     document.getElementById("computerCounter").innerHTML = ++i3;
                 else
                     clearInterval(inv3);
-            }   , 90);
+            }   , 65);
         </script>
 
     </section>
