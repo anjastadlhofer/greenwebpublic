@@ -41,6 +41,7 @@
         <img class="img-fluid img-profile rounded-circle mt-0 mb-2" src="img/logo.png" alt="">
       
     </a>
+      <br>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
