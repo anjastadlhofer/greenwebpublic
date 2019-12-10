@@ -34,7 +34,7 @@ button:focus
             <div class="subheading mb-3">Streaming Auswertung</div>
            <p>
               
-              Für ein z.b. 10min Youtube Video od. Streaming Video kann man folgende Anzahl an km mit den diversen Fortbewegungsmittel zurücklegen. Aber sieh selbst! 
+              Für 1 Stunde Streaming kann man folgende Meteranzahl mit den diversen Fortbewegungsmittel zurücklegen. Aber sieh selbst! 
               
             </p>  
           </div>
@@ -44,44 +44,44 @@ button:focus
         </div>
           
     
-<p><button class="buttonstart" onclick="myMove(40,1,'byShow1')">Klicke, um die Kilometeranzahl eines Dieselautos zu erfahren!</button></p>       
+<p><button class="buttonstart" onclick="myMove(16,1,'byShow1')">Klicke, um die Kilometeranzahl eines <b>Dieselautos</b> zu erfahren!</button></p>       
 <div id ="container">
-<div class ="animate" id="1"><img src="img/carBLUE.png" width="100"><span id="byShow1" style="visibility:hidden;">40km</span></div>
+<div class ="animate" id="1"><img src="img/carBLUE.png" width="100"><span id="byShow1" style="visibility:hidden;">125m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
   <br>   
-<p><button class="buttonstart" onclick="myMove(40,2,'byShow2')">Ist ein Benzinauto effizienter? Finde es heraus!</button></p>       
+<p><button class="buttonstart" onclick="myMove(14,2,'byShow2')">Ist ein <b>Benzinauto</b> effizienter? Finde es heraus!</button></p>       
 <div id ="container">
-<div class ="animate" id="2"><img src="img/carRED.png" width="100"><span id="byShow2" style="visibility:hidden;">40km</span></div>
+<div class ="animate" id="2"><img src="img/carRED.png" width="100"><span id="byShow2" style="visibility:hidden;">115m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
   <br> 
-<p><button class="buttonstart" onclick="myMove(70,3,'byShow3')">Klicken, um die Bilanz eines Elektroautos zu erfahren!</button></p>        
+          <p><button class="buttonstart" onclick="myMove(28,3,'byShow3')">Klicken, um die Bilanz eines <b>Elektroautos</b> zu erfahren!</button></p>        
 <div id ="container">
-<div class ="animate" id="3"><img src="img/electrocar.png" width="100"><span id="byShow3" style="visibility:hidden;">70km</span></div>
+<div class ="animate" id="3"><img src="img/electrocar.png" width="100"><span id="byShow3" style="visibility:hidden;">260m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
     <br>
-<p><button class="buttonstart" onclick="myMove(20,4,'byShow4')">Ist der Flugverkehr wirklich so schlimm?</button></p>        
+<p><button class="buttonstart" onclick="myMove(5,4,'byShow4')">Ist der <b>Flugverkehr</b> wirklich so schlimm?</button></p>        
 <div id ="container">
-<div class ="animate" id="4"><img src="img/plane.png" width="120"><span id="byShow4" style="visibility:hidden;">20km</span></div>
+<div class ="animate" id="4"><img src="img/plane.png" width="120"><span id="byShow4" style="visibility:hidden;">60m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
     <br>
-<p><button class="buttonstart" onclick="myMove(80,5,'byShow5')">Klicke, um die Effizienz eines Zuges zu sehen!</button></p>        
+<p><button class="buttonstart" onclick="myMove(82,5,'byShow5')">Klicke, um die Effizienz eines <b>Zuges</b> zu sehen!</button></p>        
 <div id ="container">
-<div class ="animate" id="5"><img src="img/train.png" width="130"><span id="byShow5" style="visibility:hidden;">80km</span></div>
+<div class ="animate" id="5"><img src="img/train.png" width="130"><span id="byShow5" style="visibility:hidden;">1730m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
   <br>
-<p><button class="buttonstart" onclick="myMove(30,6,'byShow6')">Ist der Bus wirklich das umweltverträglichste Fortbewegungsmittel?</button></p>        
+<p><button class="buttonstart" onclick="myMove(55,6,'byShow6')">Ist der <b>Bus</b> wirklich das umweltverträglichste Fortbewegungsmittel?</button></p>        
 <div id ="container">
-<div class ="animate" id="6"><img src="img/bus.png" width="100"><span id="byShow6" style="visibility:hidden;">80km</span></div>
+<div class ="animate" id="6"><img src="img/bus.png" width="100"><span id="byShow6" style="visibility:hidden;">490m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
