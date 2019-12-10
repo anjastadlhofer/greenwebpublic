@@ -1,10 +1,8 @@
 <style>
     p.solid {border-style: solid;
-            border-radius: 20px;
             align-content: center;
-            text-align: center;
-            padding-top: 0px;
-            padding-bottom: 40px;
+            padding-left: 30px;
+            padding-bottom: 10px;
             background-color: #C0E9B5; 
     }
 </style>
@@ -32,6 +30,7 @@
               <br>
                   </p>
                 <p class="solid">
+                <br>
                 <img src="img/monitor.png" height="200"><br>
                 Computer produziert: <span id="computerCounter"></span>
               <br>
