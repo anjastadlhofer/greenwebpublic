@@ -38,7 +38,7 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Green Web</span>
       
-        <img class="img-fluid img-profile rounded-circle mt-0 mb-2" src="img/logo.png" alt="">
+        <img style="transform:rotate(45deg)"; class="img-fluid img-profile square mt-0 mb-2" src="img/logo.png" data-rotate="90" alt="">
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

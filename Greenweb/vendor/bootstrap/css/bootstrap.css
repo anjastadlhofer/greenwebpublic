@@ -6707,6 +6707,11 @@ button.bg-dark:focus {
   border-radius: 50% !important;
 }
 
+.square {
+  transform: rotate(-45deg) !important;
+  
+}
+
 .rounded-pill {
   border-radius: 50rem !important;
 }
