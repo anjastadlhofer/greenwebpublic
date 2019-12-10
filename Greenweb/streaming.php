@@ -403,7 +403,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
         function grow(){
           var elem = document.getElementById("pic");
           var pos = 0;
-          var id = setInterval(frame, 10);
+          var id = setInterval(frame, 1);
           function frame() {
             if (pos == 700) {
               clearInterval(id);
