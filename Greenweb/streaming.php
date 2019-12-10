@@ -1,60 +1,63 @@
 <style type="text/css">
-.topright {
-    position: absolute;
-    right: 50px;
-    height: 400px;
-    width: 25%;
-    background-image: url("img/tree.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    text-align: center;
-    font-size: 100px;
-    color: #01450b;
-}
-   
 
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+    height: 800px; 
+    border: 0px;
+}
+.counter{
+    font-size: 210px; 
+    text-shadow: 1px  1px 1px black,
+                  1px -1px 1px black,
+                 -1px  1px 1px black,
+                 -1px -1px 1px black;
+    color: #01450b;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+    #pic{
+        max-height: 700px;
+    }
 </style> 
 
 <hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
       <div class="w-100">
         <h2 class="mb-5">Streaming</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div>     
-              
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">   
+             <p> 
               <form>
-  Wähle die Qualität des Streams aus?<br>
+  <h3>Wähle die Qualität des Streams aus?</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
   <input type="radio" name="quality" value="1280" onclick="show1();"/> 1280x720<br>
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
               </form>
           <br>
-        <div id="speed" class="hide" >
-                  <form>
-          Wähle die Geschwindigkeit des Streams aus?<br>
+        <div id="speed" class="hide">
+                <form>
+    <h3>Wähle die Geschwindigkeit des Streams aus?</h3><br>
   <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Fast<br>
   <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Medium<br>
   <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Slow<br>
-                      </form>
+                </form>
           </div>
             <br>
-            <div id="title" class="hide">
-              <h3 class="mb-0"><div id="result"></div></h3>
-
-            </div>
-              <div id="plot" class="hide">
-                <div class="topright">
-                    <span id="counter" class="counter"></span> 
-                    
-                    
-                </div>
-            
-                    <div id="myDiv1" ></div>      
-            </div>
-             
-              
-              
+                 <h2 id="title" class="mb-0" class="hide"><div id="result"></div></h2>
+                <div id="plot" class ="hide">
+                <div class="container">
+                  <img id="pic" src="img/tree.png">
+                    <span id="counter" class="counter"></span>                      
+                <br>
+                   </div>
+                    <div id="myDiv1" ></div>
+                  </div>
+  
               
               <div id="1920schneller" class="hide">
               <?php
@@ -74,17 +77,26 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace1 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace1];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {responsive: true});
+Plotly.newPlot('myDiv1', data, {}, {showSendToCloud: true});
 </script></div>
               
               
+<!--
               <div id="1920mittlerer" class="hide">
               <?php
 $sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
@@ -322,9 +334,14 @@ var data = [ trace1];
 var layout = {};
 Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
 </script></div>    
-              
-              
-          
+-->
+               
+                </div>
+              <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            </div>
+      </div>
+    
     <script>
         
         function show2(){
@@ -351,8 +368,9 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
                     s = ele1[i].value;
                 }
             }
-            show2()
-            document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
+            grow();
+//            show2();
+//            document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
 
             for(i = 0; i < list.length; i++){
                 if(list[i] == s){
@@ -360,10 +378,11 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
                     document.getElementById('plot').style.display ='block';
                     undo();
                     document.getElementById(stream).style.display ='block';
+                    
                 }
             else{
                 document.getElementById("result").innerHTML = "Bitte Geschwindikeit auswählen!"
-                document.getElementById('title').style.display ='block';
+                document.getElementById('title').style.display ='block';        
                 }
             }
         }
@@ -380,18 +399,31 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
             document.getElementById('640langsamer').style.display = 'none';
         }
         
+        function grow(){
+          var elem = document.getElementById("pic");
+          var pos = 0;
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (pos == 700) {
+              clearInterval(id);
+            } else {
+              pos++; 
+              elem.style.height = pos + 'px'; 
+            }
+          }
+        }
+              
     </script>
               
 <script>
-var i = 0;var inv = setInterval(function() {
-    if(i < 5000)
-        document.getElementById("counter").innerHTML = ++i;
-    else
-        clearInterval(inv);
-}, 1);
+    var i = 0;var inv = setInterval(function() {
+        if(i < 5000)
+            document.getElementById("counter").innerHTML = ++i;
+        else
+            clearInterval(inv);
+    }, 1);
 </script>
-              
-            </div>
+              </p>
           </div>
-        </div>
 </section>
+
