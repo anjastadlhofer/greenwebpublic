@@ -41,6 +41,7 @@
         <img style="transform:rotate(45deg)"; class="img-fluid img-profile square mt-0 mb-2" src="img/logo.png" data-rotate="90" alt="">
       
     </a>
+      <br>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
