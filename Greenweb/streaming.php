@@ -2,7 +2,7 @@
 .topright {
     position: absolute;
     right: 50px;
-    height: 300px;
+    height: 400px;
     width: 25%;
     background-image: url("img/tree.png");
     background-position: center;
@@ -12,13 +12,15 @@
     font-size: 100px;
     color: #01450b;
 }
+   
+
 </style> 
 
 <hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
       <div class="w-100">
         <h2 class="mb-5">Streaming</h2>
-<!--        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">-->
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div>     
               
               <form>
@@ -45,9 +47,10 @@
                 <div class="topright">
                     <span id="counter" class="counter"></span> 
                     
+                    
                 </div>
             
-                    <div id="myDiv1"></div>      
+                    <div id="myDiv1" ></div>      
             </div>
              
               
@@ -78,7 +81,7 @@ var trace1 = {
 };
 var data = [ trace1];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
+Plotly.newPlot('myDiv1', data, layout, {responsive: true});
 </script></div>
               
               
@@ -388,7 +391,7 @@ var i = 0;var inv = setInterval(function() {
 }, 1);
 </script>
               
-           
+            </div>
           </div>
         </div>
 </section>
