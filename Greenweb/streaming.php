@@ -369,6 +369,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
                 }
             }
             grow();
+            counter();
 //            show2();
 //            document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
 
@@ -412,9 +413,20 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
             }
           }
         }
+        function counter(){
+             var i = 0;var inv = setInterval(function() {
+                if(i < 5000)
+                    document.getElementById("counter").innerHTML = ++i;
+                else
+                    clearInterval(inv);
+            }, 1);
+            
+        }
+           
               
     </script>
               
+<!--
 <script>
     var i = 0;var inv = setInterval(function() {
         if(i < 5000)
@@ -423,6 +435,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
             clearInterval(inv);
     }, 1);
 </script>
+-->
               </p>
           </div>
 </section>
