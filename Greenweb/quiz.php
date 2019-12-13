@@ -55,7 +55,7 @@
     a : 4
   },
   {
-    q : "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
+    q : "Wie viele Bäume werden bei Stramen über eine Stunde bei einer Auflösung von 1920x1080 (HD) und einer langsamen Komprimierung beansprucht?",
     o : [
       "400 pounds",
       "550 pounds",
