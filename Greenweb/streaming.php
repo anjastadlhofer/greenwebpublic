@@ -15,13 +15,18 @@
                  -1px -1px 1px black;
     color: #01450b;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
     
     #pic{
-        max-height: 700px;
+        max-height: 600px;
+    }
+    .dia{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
     }
 </style> 
 
@@ -39,37 +44,119 @@
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
               </form>
           <br>
+                <div id="test"></div>
         <div id="speed" class="hide">
                 <form>
-    <h3>Wähle die Geschwindigkeit des Streams aus?</h3><br>
-  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Fast<br>
-  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Medium<br>
-  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Slow<br>
+    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus?</h3><br>
+  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
+  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
+  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
                 </form>
           </div>
             <br>
-                 <h2 id="title" class="mb-0" class="hide"><div id="result"></div></h2>
+                <h2 id="title" class="mb-0" class="hide"><div id="result"></div></h2>
                 <div id="plot" class ="hide">
                 <div class="container">
                   <img id="pic" src="img/tree.png">
                     <span id="counter" class="counter"></span>                      
                 <br>
                    </div>
-                    <div id="myDiv1" ></div>
+                    <div class="dia">
+                    <div id="1920schneller" class="hide"></div>
+                    <div id="1920mittlerer" class="hide"></div>
+                    <div id="1920langsamer" class="hide"></div>
+                    <div id="1280schneller" class="hide"></div>
+                    <div id="1280mittlerer" class="hide"></div>
+                    <div id="1280langsamer" class="hide"></div>
+                    <div id="640schneller" class="hide"></div>
+                    <div id="640mittlerer" class="hide"></div>
+                    <div id="640langsamer" class="hide"></div>
                   </div>
+                </div>
   
               
-              <div id="1920schneller" class="hide">
+                
+                
+                
+<div class="hide">
+                    
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql1_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_2";
+$result1_1 = mysqli_query ($db_link, $sql1_1 );
+while( $row = mysqli_fetch_array ( $result1_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql1_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_2";
+$result1_2 = mysqli_query ($db_link, $sql1_2 );
+while( $row = mysqli_fetch_array ( $result1_2 ) )
+{
+    $time[] = $row['zeit'];
+}
+?>
+<script>
+var latit1 = <?php echo json_encode($lat); ?>;
+var elapsedTime1 = <?php echo json_encode($time); ?>;
+    
+    trace1 = {
+  type: 'scatter',
+  x: elapsedTime1,
+  y: latit1,
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
+};
+
+var data1 = [trace1];
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
+Plotly.newPlot('1920schneller', data1, {showSendToCloud: true});
+    
+</script>
+
+              
+              <?php
+$sql2_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_1";
+$result2_1 = mysqli_query ($db_link, $sql2_1 );
+while( $row = mysqli_fetch_array ( $result2_1 ) )
+{
+    $lat[] = $row['liste'];
+}
+$sql2_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_1";
+$result2_2 = mysqli_query ($db_link, $sql2_2 );
+while( $row = mysqli_fetch_array ( $result2_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -78,7 +165,7 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
     
-    trace1 = {
+    trace2 = {
   type: 'scatter',
   x: elapsedTime,
   y: latit,
@@ -90,24 +177,22 @@ var elapsedTime = <?php echo json_encode($time); ?>;
   }
 };
 
-var data = [trace1];
+var data = [trace2];
 var layout = {};
-Plotly.newPlot('myDiv1', data, {}, {showSendToCloud: true});
-</script></div>
-              
-              
-<!--
-              <div id="1920mittlerer" class="hide">
+Plotly.newPlot('1920mittlerer', data, {}, {showSendToCloud: true});
+</script>
+      
+
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_3";
+$result3_1 = mysqli_query ($db_link, $sql3_1 );
+while( $row = mysqli_fetch_array ( $result3_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql3_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_3";
+$result3_2 = mysqli_query ($db_link, $sql3_2 );
+while( $row = mysqli_fetch_array ( $result3_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -115,28 +200,35 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace3 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace3];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
+Plotly.newPlot('1920langsamer', data, {}, {showSendToCloud: true});
+</script>
+
               
-              
-              <div id="1920langsamer" class="hide">
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql4_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_5";
+$result4_1 = mysqli_query ($db_link, $sql4_1 );
+while( $row = mysqli_fetch_array ( $result4_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql4_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_5";
+$result4_2 = mysqli_query ($db_link, $sql4_2 );
+while( $row = mysqli_fetch_array ( $result4_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -144,28 +236,36 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace4 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace4];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
+Plotly.newPlot('1280schneller', data, {}, {showSendToCloud: true});
+
+</script>
               
               
-              <div id="1280schneller" class="hide">
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql5_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_4";
+$result5_1 = mysqli_query ($db_link, $sql5_1 );
+while( $row = mysqli_fetch_array ( $result5_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql5_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_4";
+$result5_2 = mysqli_query ($db_link, $sql5_2 );
+while( $row = mysqli_fetch_array ( $result5_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -173,28 +273,35 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace5 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace5];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
-              
-              
-              <div id="1280mittlerer" class="hide">
-              <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+Plotly.newPlot('1280mittlerer', data, {}, {showSendToCloud: true});
+
+</script>
+
+             <?php
+$sql6_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_6";
+$result6_1 = mysqli_query ($db_link, $sql6_1 );
+while( $row = mysqli_fetch_array ( $result6_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql6_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_6";
+$result6_2 = mysqli_query ($db_link, $sql6_2 );
+while( $row = mysqli_fetch_array ( $result6_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -202,28 +309,36 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace6 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace6];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
-              
-              
-              <div id="1280langsamer" class="hide">
-              <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+Plotly.newPlot('1280langsamer', data, {}, {showSendToCloud: true});
+
+</script>
+   
+
+             <?php
+$sql7_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_8";
+$result7_1 = mysqli_query ($db_link, $sql7_1 );
+while( $row = mysqli_fetch_array ( $result7_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql7_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_8";
+$result7_2 = mysqli_query ($db_link, $sql7_2 );
+while( $row = mysqli_fetch_array ( $result7_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -231,28 +346,35 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace7 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace7];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
+Plotly.newPlot('640schneller', data, {}, {showSendToCloud: true});
+</script>
               
-              
-              <div id="640schneller" class="hide">
+
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql8_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_7";
+$result8_1 = mysqli_query ($db_link, $sql8_1 );
+while( $row = mysqli_fetch_array ( $result8_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql8_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_7";
+$result8_2 = mysqli_query ($db_link, $sql8_2 );
+while( $row = mysqli_fetch_array ( $result8_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -260,28 +382,36 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace8 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
+
+var data = [trace8];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
+Plotly.newPlot('640mittlerer', data, {}, {showSendToCloud: true});
+</script>
+
               
-              
-              <div id="640mittlerer" class="hide">
+
               <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
+$sql9_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_9";
+$result9_1 = mysqli_query ($db_link, $sql9_1 );
+while( $row = mysqli_fetch_array ( $result9_1 ) )
 {
     $lat[] = $row['liste'];
 }
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
+$sql9_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_9";
+$result9_2 = mysqli_query ($db_link, $sql9_2 );
+while( $row = mysqli_fetch_array ( $result9_2 ) )
 {
     $time[] = $row['zeit'];
 }
@@ -289,53 +419,25 @@ while( $row = mysqli_fetch_array ( $result3 ) )
 <script>
 var latit = <?php echo json_encode($lat); ?>;
 var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
+    
+    trace9 = {
+  type: 'scatter',
   x: elapsedTime,
   y: latit,
-  mode: 'markers'
+  mode: 'lines',
+  name: 'Red',
+  line: {
+    color: 'rgb(219, 64, 82)',
+    width: 3
+  }
 };
-var data = [ trace1];
-var layout = {
-    xaxis: {
-        title: 'Zeit'
-    },
-    yaxis: {
-        title: 'Energieverbrauch in mWh'
-    }
-};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>
-              
-              
-              <div id="640langsamer" class="hide">
-              <?php
-$sql1 = "SELECT (CumulativeProcessorEnergymWh + CumulativeIAEnergymWh + CumulativeDRAMEnergymWh) AS liste FROM servermessung";
-$result1 = mysqli_query ($db_link, $sql1 );
-while( $row = mysqli_fetch_array ( $result1 ) )
-{
-    $lat[] = $row['liste'];
-}
-$sql3 = "SELECT elapsedTimeSec AS zeit FROM servermessung";
-$result3 = mysqli_query ($db_link, $sql3 );
-while( $row = mysqli_fetch_array ( $result3 ) )
-{
-    $time[] = $row['zeit'];
-}
-?>
-<script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
-var trace1 = {
-  x: elapsedTime,
-  y: latit,
-  mode: 'markers'
-};
-var data = [ trace1];
+
+var data = [trace9];
 var layout = {};
-Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
-</script></div>    
--->
-               
+Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
+</script>
+</div>
+
                 </div>
               <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
           <div class="resume-content">
@@ -343,11 +445,7 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
       </div>
     
     <script>
-        
-        function show2(){
-            document.getElementById('title').style.display ='block';
-        }
-        
+        var count = 0;
         function show1(){
             document.getElementById('speed').style.display ='block';
             
@@ -356,7 +454,6 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
             var stream = "";
             var q = "";
             var s = "";
-            var list = ["schneller", "mittlerer","langsamer"];
             
             for(i = 0; i < ele.length; i++) { 
                 if(ele[i].checked){
@@ -368,24 +465,43 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
                     s = ele1[i].value;
                 }
             }
-            grow();
-            counter();
-//            show2();
-//            document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
+          
+            stream = q+s;
+            
+            switch (stream) {
+              case "640schneller":
+                count = 9;
+                break;
+              case "640langsamer":
+              case "640mittlerer":
+              case "1280schneller":
+              case "1920schneller":
+                count = 10;
+                break;
+              case "1280mittlerer":
+                count = 11;
+                break;
+              case "1280langsamer":
+              case "1920langsamer":
+                 count = 13;
+                break;
+              case "1920mittlerer":
+                count = 14;
+            }
 
-            for(i = 0; i < list.length; i++){
-                if(list[i] == s){
-                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Geschwindigkeit";
+
+                if(s == "schneller"|| s == "mittlerer"|| s== "langsamer"){
+                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
                     document.getElementById('plot').style.display ='block';
                     undo();
                     document.getElementById(stream).style.display ='block';
-                    
+                    grow();
                 }
-            else{
-                document.getElementById("result").innerHTML = "Bitte Geschwindikeit auswählen!"
-                document.getElementById('title').style.display ='block';        
+                else{
+                    document.getElementById("result").innerHTML = "Bitte Geschwindikeit auswählen!"
+                    document.getElementById('title').style.display ='block';        
                 }
-            }
+            
         }
         
         function undo(){
@@ -405,37 +521,30 @@ Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
           var pos = 0;
           var id = setInterval(frame, 1);
           function frame() {
-            if (pos == 700) {
+            if (pos == 600) {
               clearInterval(id);
             } else {
               pos++; 
               elem.style.height = pos + 'px'; 
             }
           }
+            counter();
         }
+        
         function counter(){
+            clearInterval(inv)
              var i = 0;var inv = setInterval(function() {
-                if(i < 5000)
+                 if(i < count)
                     document.getElementById("counter").innerHTML = ++i;
                 else
                     clearInterval(inv);
-            }, 1);
+            }, 333);
             
         }
            
               
     </script>
               
-<!--
-<script>
-    var i = 0;var inv = setInterval(function() {
-        if(i < 5000)
-            document.getElementById("counter").innerHTML = ++i;
-        else
-            clearInterval(inv);
-    }, 1);
-</script>
--->
               </p>
           </div>
 </section>
