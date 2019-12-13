@@ -54,7 +54,7 @@
           <a class="nav-link js-scroll-trigger" href="#move">Move</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#streaming">Streaming</a>
+          <a class="nav-link js-scroll-trigger" href="#grow">Grow</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#dummy">Dummy</a>
@@ -105,7 +105,7 @@
 	include("move.php");
 ?>
    <?php
-	include("streaming.php");
+	include("grow.php");
 ?>   
    <?php
 	include("dummy.php");

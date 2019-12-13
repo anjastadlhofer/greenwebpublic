@@ -18,7 +18,9 @@
           <div class="resume-content">
             
             <h3 class="mb-0">Produzierte Resourcen</h3>
-            <div class="subheading mb-3">Seit deinem Besuch auf dieser Website ist auf der Welt so einiges passiert: </div>
+              <br>
+              Seit deinem Besuch auf dieser Website ist auf der Welt so einiges passiert:
+            <div class="subheading mb-3"> </div>
               
             
             <p>

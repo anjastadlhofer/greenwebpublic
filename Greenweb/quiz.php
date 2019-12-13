@@ -20,10 +20,10 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="quiz">
       <div class="w-100">
         <h2 class="mb-5">Quiz</h2>
+        <h3 class="subheading mb-3">Um all die neuen Informationen noch zu festigen, hier ein kleines Quiz! </h3>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0"></h3>
-            <div class="subheading mb-3">Quiz spielen</div>
+            <div class="subheading mb-3"></div>
            <p>
         <!------------------------------------------------------------------------------------------------------------- -->
 <form id="quiz-wrap"></form>
