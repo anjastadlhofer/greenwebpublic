@@ -22,7 +22,7 @@
         <h2 class="mb-5">Quiz</h2>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Quiz</h3>
+            <h3 class="mb-0"></h3>
             <div class="subheading mb-3">Quiz spielen</div>
            <p>
         <!------------------------------------------------------------------------------------------------------------- -->
@@ -31,16 +31,7 @@
               
               <script>
                   var questions = [
-  {
-    q : "Welche Website verbraucht mehr Strom?",
-    o : [
-        "Statische Website",
-        "Dynamische Website",
-        "Kein Unterschied"
-
-    ],
-    a : 1 // arrays start with 0,
-  },
+  
   {
     q : "Mit welchem Fortbewegungsmittel kommt man anstatt zu streamen am weitesten?",
     o : [
@@ -55,7 +46,7 @@
     a : 4
   },
   {
-    q : "Wie viele Bäume werden bei Stramen über eine Stunde bei einer Auflösung von 1920x1080 (HD) und einer langsamen Komprimierung beansprucht?",
+    q : "Wie viele Bäume werden bei Streamen über eine Stunde bei einer Auflösung von 1920x1080 (HD) und einer langsamen Komprimierung beansprucht?",
     o : [
       "400 pounds",
       "550 pounds",
@@ -65,7 +56,7 @@
     a : 2
   },
   {
-    q : "Which is the seventh planet from the sun?",
+    q : "Von wie vielen Servern werden Daten erhalten wenn man die Kronen Zeitung aufruft?",
     o : [
       "Uranus",
       "Earth",
@@ -187,7 +178,7 @@ window.addEventListener("load", quiz.draw);
             </p>  
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">November 2019</span>
+            <span class="text-primary"></span>
           </div>
         </div>
                  
