@@ -15,7 +15,7 @@
                  -1px -1px 1px black;
     color: #01450b;
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -27,6 +27,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+        text-align: left;
     }
 </style> 
 
@@ -38,7 +39,7 @@
             <div class="resume-content">   
              <p> 
               <form>
-  <h3>Wähle die Qualität des Streams aus?</h3><br>
+  <h3>Wähle die Qualität des Streams aus:</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
   <input type="radio" name="quality" value="1280" onclick="show1();"/> 1280x720<br>
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
@@ -47,20 +48,31 @@
                 <div id="test"></div>
         <div id="speed" class="hide">
                 <form>
-    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus?</h3><br>
+    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
   <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
   <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
   <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
                 </form>
+            <from>
+                <br>
+                <h3>Wähle die Länge des Streams aus:</h3><br>
+                <select id="choice" onchange="show1()">
+                   <option value="1">Game of Thrones Folge (1h)</option>
+                   <option value="2.3">Avengers End Game (3h)</option>
+                   <option value="16.">Serien Marathon (24h)</option>
+                </select>
+            </from>
           </div>
             <br>
-                <h2 id="title" class="mb-0" class="hide"><div id="result"></div></h2>
+                <h3 id="title" class="mb-0" class="hide"><div id="result"></div></h3>
                 <div id="plot" class ="hide">
                 <div class="container">
                   <img id="pic" src="img/tree.png">
                     <span id="counter" class="counter"></span>                      
                 <br>
+                    
                    </div>
+                    <h3>Hier sieht man die benötigten Watt der jeweiligen Einstellungen nach einer 30 Sekunden dauernden Einlaufzeit.</h3>
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>
@@ -112,33 +124,21 @@ var elapsedTime1 = <?php echo json_encode($time); ?>;
 
 var data1 = [trace1];
 var layout = {
-   title: {
-    text:'Plot Title',
-    font: {
-      family: 'Courier New, monospace',
-      size: 24
-    },
-    xref: 'paper',
-    x: 0.05,
-  },
+  title: "Plot Title",
   xaxis: {
-    title: {
-      text: 'x Axis',
-      font: {
-        family: 'Courier New, monospace',
-        size: 18,
-        color: '#7f7f7f'
-      }
-    },
+    title: "x Axis",
+    titlefont: {
+      family: "Courier New, monospace",
+      size: 18,
+      color: "#7f7f7f"
+    }
   },
   yaxis: {
-    title: {
-      text: 'y Axis',
-      font: {
-        family: 'Courier New, monospace',
-        size: 18,
-        color: '#7f7f7f'
-      }
+    title: "y Axis",
+    titlefont: {
+      family: "Courier New, monospace",
+      size: 18,
+      color: "#7f7f7f"
     }
   }
 };
@@ -178,7 +178,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace2];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('1920mittlerer', data, {}, {showSendToCloud: true});
 </script>
       
@@ -214,7 +244,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace3];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('1920langsamer', data, {}, {showSendToCloud: true});
 </script>
 
@@ -250,7 +310,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace4];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('1280schneller', data, {}, {showSendToCloud: true});
 
 </script>
@@ -287,7 +377,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace5];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('1280mittlerer', data, {}, {showSendToCloud: true});
 
 </script>
@@ -323,7 +443,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace6];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('1280langsamer', data, {}, {showSendToCloud: true});
 
 </script>
@@ -360,7 +510,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace7];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('640schneller', data, {}, {showSendToCloud: true});
 </script>
               
@@ -396,7 +576,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace8];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('640mittlerer', data, {}, {showSendToCloud: true});
 </script>
 
@@ -433,7 +643,37 @@ var elapsedTime = <?php echo json_encode($time); ?>;
 };
 
 var data = [trace9];
-var layout = {};
+var layout = {
+   title: {
+    text:'Plot Title',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
 Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
 </script>
 </div>
@@ -446,6 +686,8 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
     
     <script>
         var count = 0;
+        var multi = 0;
+        
         function show1(){
             document.getElementById('speed').style.display ='block';
             
@@ -470,25 +712,30 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             
             switch (stream) {
               case "640schneller":
-                count = 9;
+                   multi = document.querySelector("#choice").value;
+                count = 9 * multi;
                 break;
               case "640langsamer":
               case "640mittlerer":
               case "1280schneller":
               case "1920schneller":
-                count = 10;
+                    multi = document.querySelector("#choice").value;
+                count = 10 * multi;
                 break;
               case "1280mittlerer":
-                count = 11;
+                    multi = document.querySelector("#choice").value;
+                count = 11 * multi;
                 break;
               case "1280langsamer":
               case "1920langsamer":
-                 count = 13;
+                    multi = document.querySelector("#choice").value;
+                 count = 13 * multi;
                 break;
               case "1920mittlerer":
-                count = 14;
+                    multi = document.querySelector("#choice").value;
+                count = 14 * multi;
             }
-
+            
 
                 if(s == "schneller"|| s == "mittlerer"|| s== "langsamer"){
                     document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
@@ -498,11 +745,12 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
                     grow();
                 }
                 else{
-                    document.getElementById("result").innerHTML = "Bitte Geschwindikeit auswählen!"
+                    document.getElementById("result").innerHTML = "Bitte Geschwindigkeit auswählen!"
                     document.getElementById('title').style.display ='block';        
                 }
             
         }
+        
         
         function undo(){
             document.getElementById('1920schneller').style.display = 'none';
@@ -538,7 +786,7 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
                     document.getElementById("counter").innerHTML = ++i;
                 else
                     clearInterval(inv);
-            }, 333);
+            }, (200/multi));
             
         }
            
