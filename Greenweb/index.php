@@ -60,7 +60,7 @@
           <a class="nav-link js-scroll-trigger" href="#dummy">Dummy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#creativity">Creativity</a>
+          <a class="nav-link js-scroll-trigger" href="#consume">Consume</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#quiz">Quiz</a>
@@ -80,14 +80,17 @@
           <a href="mailto:name@email.com">info@fh-joanneum.at</a>
         </div>
         <p class="lead mb-5">Diese Website dient zur Veranschaulichung des <b>Energieverbrauches</b> bezogen auf <b>Webanwendungen</b> wie z.B. Streaming, Blogs, Webshops etc. Folgend befinden sich verschiedene interaktive Visualisierungen basierend auf eigenen Messungen. Diese Website inkl. der relevanten Messungen entstanden im Zuge der bereichsübergreifenden Projektarbeit von IMA17. 
+            <br>
+                        <br>
+        Die Projektleitung unterlag bei diesem Projekt Gerhard Sprung, MSc. <br>
+        Das Studierendenteam beim Projekt "GreenWeb" und verantwortlich für diese Website sind Anja Stadlhofer, Lukas Reitbauer und Julia Gruber.  
+            <br>
+                        <br>
+        Im Labor hat das Team "GreenWebPrototype" unter der Projektleitung von DI Georg Mittenecker die Infrastruktur aufgesetzt. <br>
+        Das umsetzende Team besteht aus Colin Jochum, Marcel Kahr und Tom Kleinhapl.
           </p>
         <div class="social-icons">
-          <a href="#">
-            <i class="fab fa-baby"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-github"></i>
-          </a>
+     
           <a href="https://www.instagram.com/fh_joanneum/?hl=de">
             <i class="fab fa-instagram"></i>
           </a>
@@ -108,7 +111,7 @@
 	include("dummy.php");
 ?>  
 <?php
-	include("creativity.php");
+	include("consume.php");
 ?>
 <?php
 	include("quiz.php");

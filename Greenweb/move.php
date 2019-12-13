@@ -31,15 +31,17 @@ button:focus
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">Streaming Auswertung</h3>
-            <div class="subheading mb-3">Streaming Auswertung</div>
+            <div class="subheading mb-3"></div>
            <p>
               
-              Für 1 Stunde Streaming kann man folgende Meteranzahl mit den diversen Fortbewegungsmittel zurücklegen. Aber sieh selbst! 
-              
+            
+               Schon eine Stunde zu streamen wirkt sich pro Gerät auf die Umwelt aus. Statt eine Stunde zu Streamen hätte man so weit mit den einzelnen Fortbewegungsmitteln fahren können. Aber sieh selbst! 
+
+ 
             </p>  
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">November 2019</span>
+            <span class="text-primary"></span>
           </div>
         </div>
           
