@@ -57,7 +57,7 @@
           <a class="nav-link js-scroll-trigger" href="#grow">Grow</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#dummy">Dummy</a>
+          <a class="nav-link js-scroll-trigger" href="#explore">Explore</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#consume">Consume</a>
@@ -108,7 +108,7 @@
 	include("grow.php");
 ?>   
    <?php
-	include("dummy.php");
+	include("explore.php");
 ?>  
 <?php
 	include("consume.php");
