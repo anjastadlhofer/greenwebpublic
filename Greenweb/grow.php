@@ -45,15 +45,9 @@
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
               </form>
           <br>
-                <div id="test"></div>
-        <div id="speed" class="hide">
-                <form>
-    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
-  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
-  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
-  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
-                </form>
-            <from>
+                <div id="speed" class="hide">
+                <from>
+                     
                 <br>
                 <h3>Wähle die Länge des Streams aus:</h3><br>
                 <select id="choice" onchange="show1()">
@@ -62,9 +56,19 @@
                    <option value="24">Serien Marathon (24h)</option>
                 </select>
             </from>
+                <br>
+                <div id="test"></div>
+                <form>
+                    <br>
+    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
+  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
+  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
+  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
+                </form>
+            
           </div>
             <br>
-                <h3 id="title" class="mb-0" class="hide"><div id="result"></div></h3>
+                <h3 id="ausgabe" class="mb-0" class="hide"></h3>
                 <div id="plot" class ="hide">
                 <div class="container">
                   <img id="pic" src="img/tree.png">
@@ -72,7 +76,7 @@
                 <br>
                     
                    </div>
-                    <h3 id="ausgabe"></h3>
+                    <h3 id="result"></h3>
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>
