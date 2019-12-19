@@ -11,26 +11,27 @@
                 <div id="lb" >
                   <div id="lb-title">
 				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen. <br>
-                      Hier kannst du sehen woher die Daten kommen.
+                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen.
 
 
 
                   </div>
 				  <div id="lb-text">
 				   <br>
-				   <button type="button" class="buttonstart" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button> <br>
-				   <button type="button" class="buttonstart" onClick="map_amazon()"> Let's shop on Amazon (www.amazon.de) </button> <br>
-				   <button type="button" class="buttonstart" onClick="map_krone()"> Was gibt es neues? (www.krone.at)  </button> <br>
+				   <button type="button" class="buttonstart" id="btn-wiki" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button>
+				   
+				   <button type="button" class="buttonstart" id="btn-amazon" onClick="map_amazon()"> Let's shop on Amazon (www.amazon.de) </button> 
+				   
+				   <button type="button" class="buttonstart" id="btn-krone" onClick="map_krone()"> Was gibt es neues? (www.krone.at)  </button> 
+				   
+
+				   <div id="lb-text-map" style="display:none;">  </div>
 
 				   <p>
 
                   </div>
-
-				  <div id="chartdiv" >
+				  <div id="chartdiv" >  </div>
 				  
-				 
-				  
-				  </div>
 				  
 				  <!-- Styles hier die größe der Karte eintragen-->
 <style>
@@ -75,6 +76,10 @@ button:focus
 //---------------- START MAP MIT WIKIPEDIA, insgesamt 3
 function map_wikipedia() {
 am4core.ready(function() {
+
+var x = document.getElementById("lb-text-map");
+x.style.display = "block";
+x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von drei Server Daten empfangen. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -197,6 +202,10 @@ lineSeries.data = [{
 //---------------- START MAP MIT AMAZONE insgesamt 14
 function map_amazon() {
 am4core.ready(function() {
+
+var x = document.getElementById("lb-text-map");
+x.style.display = "block";
+x.innerHTML = "Beim Shoppen auf Amazon werden von 14 Server Daten empfangen,. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -477,9 +486,13 @@ lineSeries.data = [{
 //---------------- ENDE MAP MIT AMAZONE
 
 
-//---------------- START MAP MIT KRONE, insgesamt x
+//---------------- START MAP MIT KRONE, insgesamt 42
 function map_krone() {
 am4core.ready(function() {
+
+var x = document.getElementById("lb-text-map");
+x.style.display = "block";
+x.innerHTML = "Beim Aufruf der Startseite von der Krone von 42 verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
