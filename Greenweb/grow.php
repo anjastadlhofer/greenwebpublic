@@ -78,7 +78,7 @@
                 <br>
                     
                    </div>
-                    <h3>Hier sieht man die benötigten Watt der jeweiligen Einstellungen nach einer 30 Sekunden dauernden Einlaufzeit.</h3>
+                    <h3>Hier sieht man die benötigten Watt der jeweiligen Einstellungen nach 30 Sekunden IDLE.</h3>
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>
