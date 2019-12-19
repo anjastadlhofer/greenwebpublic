@@ -58,22 +58,12 @@
   {
     q : "Von wie vielen Servern werden Daten erhalten wenn man die Kronen Zeitung aufruft?",
     o : [
-      "Uranus",
-      "Earth",
-      "Pluto",
-      "Mars"
+      "42 Server",
+      "24 Server",
+      "14 Server",
+      "3 Server"
     ],
     a : 0
-  },
-  {
-    q : "Which is the largest ocean on Earth?",
-    o : [
-      "Atlantic Ocean",
-      "Indian Ocean",
-      "Arctic Ocean",
-      "Pacific Ocean"
-    ],
-    a : 3
   }
 ];
                   
