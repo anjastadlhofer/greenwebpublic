@@ -9,8 +9,8 @@
             <div class="subheading mb-3"></div>
             <p>
                 <div id="lb" >
-                  <div id="lb-title">
-				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen. <br>
+                  <div id="lb-title" style="text-align:justify">
+				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen.
                       Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen.
 
 
@@ -18,12 +18,12 @@
                   </div>
 				  <div id="lb-text">
 				   <br>
-				   <button type="button" class="buttonstart" id="btn-wiki" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button>
+				   <button type="button" class="buttonstart" id="btn-wiki" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button> <br>
 				   
-				   <button type="button" class="buttonstart" id="btn-amazon" onClick="map_amazon()"> Let's shop on Amazon (www.amazon.de) </button> 
+				   <button type="button" class="buttonstart" id="btn-amazon" onClick="map_amazon()"> Let's shop on Amazon (www.amazon.de) </button> <br>
 				   
 				   <button type="button" class="buttonstart" id="btn-krone" onClick="map_krone()"> Was gibt es neues? (www.krone.at)  </button> 
-				   
+				   <br>
 
 				   <div id="lb-text-map" style="display:none;">  </div>
 
@@ -36,7 +36,7 @@
 				  <!-- Styles hier die größe der Karte eintragen-->
 <style>
 #chartdiv { 
-  width: 150%;
+  width: 100%;
   height: 400px;
 }
 
@@ -83,7 +83,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von drei Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Server Daten empfangen. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -209,7 +209,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Shoppen auf Amazon werden von 14 Server Daten empfangen,. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Server Daten empfangen,. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -496,7 +496,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Aufruf der Startseite von der Krone von 42 verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Aufruf der Startseite von der Krone von <b> 42 </b> verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
