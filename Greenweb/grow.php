@@ -32,16 +32,12 @@
 </style> 
 
 <hr class="m-0">
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="grow">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
       <div class="w-100">
-        <h2 class="mb-5">Grow</h2>
-<h3 class="mb-0">Streaming Auswertung</h3>  
-                      <div class="subheading mb-3"></div>
-
+        <h2 class="mb-5">Streaming</h2>
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">   
              <p> 
-                 Um zu sehen wie viele Bäume mit dem Streaming beansprucht werden wähle eine Qualität und eine Geschwindigkeit aus. Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
               <form>
   <h3>Wähle die Qualität des Streams aus:</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
@@ -49,8 +45,14 @@
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
               </form>
           <br>
-               
+                <div id="test"></div>
         <div id="speed" class="hide">
+                <form>
+    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
+  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
+  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
+  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
+                </form>
             <from>
                 <br>
                 <h3>Wähle die Länge des Streams aus:</h3><br>
@@ -60,14 +62,6 @@
                    <option value="24">Serien Marathon (24h)</option>
                 </select>
             </from>
-                <form>            <br>
-
-    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
-  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
-  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
-  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
-                </form>
-            
           </div>
             <br>
                 <h3 id="title" class="mb-0" class="hide"><div id="result"></div></h3>
@@ -78,7 +72,7 @@
                 <br>
                     
                    </div>
-                    <h3>Hier sieht man die benötigten Watt der jeweiligen Einstellungen nach 30 Sekunden IDLE.</h3>
+                    <h3 id="ausgabe"></h3>
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>
@@ -702,6 +696,7 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             var stream = "";
             var q = "";
             var s = "";
+            var laenge = document.querySelector("#choice").value;
             
             for(i = 0; i < ele.length; i++) { 
                 if(ele[i].checked){
@@ -744,7 +739,8 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             
 
                 if(s == "schneller"|| s == "mittlerer"|| s== "langsamer"){
-                    document.getElementById("result").innerHTML = "Beanspruchte Bäume von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
+                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
+                    document.getElementById("ausgabe").innerHTML = "Es werden " + count + " Bäume in " + laenge + "h benötigt um den CO2 Verbrauch auszugleichen!";
                     document.getElementById('plot').style.display ='block';
                     undo();
                     document.getElementById(stream).style.display ='block';
