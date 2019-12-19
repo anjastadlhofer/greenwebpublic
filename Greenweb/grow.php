@@ -32,12 +32,15 @@
 </style> 
 
 <hr class="m-0">
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="grow">
       <div class="w-100">
-        <h2 class="mb-5">Streaming</h2>
+        <h2 class="mb-5">Grow</h2>
+<h3 class="mb-0">Streaming Auswertung</h3>  
+                      <div class="subheading mb-3"></div>
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">   
              <p> 
+                  Um zu sehen wie viele Bäume mit dem Streaming beansprucht werden wähle eine Qualität und eine Geschwindigkeit aus. Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
               <form>
   <h3>Wähle die Qualität des Streams aus:</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
@@ -101,18 +104,18 @@ $sql1_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result1_1 = mysqli_query ($db_link, $sql1_1 );
 while( $row = mysqli_fetch_array ( $result1_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat2[] = $row['liste'];
 }
 $sql1_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_2";
 $result1_2 = mysqli_query ($db_link, $sql1_2 );
 while( $row = mysqli_fetch_array ( $result1_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time2[] = $row['zeit'];
 }
 ?>
 <script>
-var latit1 = <?php echo json_encode($lat); ?>;
-var elapsedTime1 = <?php echo json_encode($time); ?>;
+var latit1 = <?php echo json_encode($lat2); ?>;
+var elapsedTime1 = <?php echo json_encode($time2); ?>;
     
     trace1 = {
   type: 'scatter',
@@ -156,18 +159,18 @@ $sql2_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result2_1 = mysqli_query ($db_link, $sql2_1 );
 while( $row = mysqli_fetch_array ( $result2_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat1[] = $row['liste'];
 }
 $sql2_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_1";
 $result2_2 = mysqli_query ($db_link, $sql2_2 );
 while( $row = mysqli_fetch_array ( $result2_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time1[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat1); ?>;
+var elapsedTime = <?php echo json_encode($time1); ?>;
     
     trace2 = {
   type: 'scatter',
@@ -216,26 +219,25 @@ var layout = {
 Plotly.newPlot('1920mittlerer', data, {}, {showSendToCloud: true});
 </script>
       
-
               <?php
-$sql1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_3";
-$result3_1 = mysqli_query ($db_link, $sql3_1 );
-while( $row = mysqli_fetch_array ( $result3_1 ) )
+$sql2_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_3";
+$result2_1 = mysqli_query ($db_link, $sql2_1 );
+while( $row = mysqli_fetch_array ( $result2_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat3[] = $row['liste'];
 }
-$sql3_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_3";
-$result3_2 = mysqli_query ($db_link, $sql3_2 );
-while( $row = mysqli_fetch_array ( $result3_2 ) )
+$sql2_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_3";
+$result2_2 = mysqli_query ($db_link, $sql2_2 );
+while( $row = mysqli_fetch_array ( $result2_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time3[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat3); ?>;
+var elapsedTime = <?php echo json_encode($time3); ?>;
     
-    trace3 = {
+    trace2 = {
   type: 'scatter',
   x: elapsedTime,
   y: latit,
@@ -247,7 +249,7 @@ var elapsedTime = <?php echo json_encode($time); ?>;
   }
 };
 
-var data = [trace3];
+var data = [trace2];
 var layout = {
    title: {
     text:'Plot Title',
@@ -281,6 +283,8 @@ var layout = {
 };
 Plotly.newPlot('1920langsamer', data, {}, {showSendToCloud: true});
 </script>
+            
+    
 
               
               <?php
@@ -288,18 +292,18 @@ $sql4_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result4_1 = mysqli_query ($db_link, $sql4_1 );
 while( $row = mysqli_fetch_array ( $result4_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat5[] = $row['liste'];
 }
 $sql4_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_5";
 $result4_2 = mysqli_query ($db_link, $sql4_2 );
 while( $row = mysqli_fetch_array ( $result4_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time5[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat5); ?>;
+var elapsedTime = <?php echo json_encode($time5); ?>;
     
     trace4 = {
   type: 'scatter',
@@ -355,18 +359,18 @@ $sql5_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result5_1 = mysqli_query ($db_link, $sql5_1 );
 while( $row = mysqli_fetch_array ( $result5_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat4[] = $row['liste'];
 }
 $sql5_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_4";
 $result5_2 = mysqli_query ($db_link, $sql5_2 );
 while( $row = mysqli_fetch_array ( $result5_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time4[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat4); ?>;
+var elapsedTime = <?php echo json_encode($time4); ?>;
     
     trace5 = {
   type: 'scatter',
@@ -421,18 +425,18 @@ $sql6_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result6_1 = mysqli_query ($db_link, $sql6_1 );
 while( $row = mysqli_fetch_array ( $result6_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat6[] = $row['liste'];
 }
 $sql6_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_6";
 $result6_2 = mysqli_query ($db_link, $sql6_2 );
 while( $row = mysqli_fetch_array ( $result6_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time6[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat6); ?>;
+var elapsedTime = <?php echo json_encode($time6); ?>;
     
     trace6 = {
   type: 'scatter',
@@ -488,18 +492,18 @@ $sql7_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result7_1 = mysqli_query ($db_link, $sql7_1 );
 while( $row = mysqli_fetch_array ( $result7_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat8[] = $row['liste'];
 }
 $sql7_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_8";
 $result7_2 = mysqli_query ($db_link, $sql7_2 );
 while( $row = mysqli_fetch_array ( $result7_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time8[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat8); ?>;
+var elapsedTime = <?php echo json_encode($time8); ?>;
     
     trace7 = {
   type: 'scatter',
@@ -554,18 +558,18 @@ $sql8_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result8_1 = mysqli_query ($db_link, $sql8_1 );
 while( $row = mysqli_fetch_array ( $result8_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat7[] = $row['liste'];
 }
 $sql8_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_7";
 $result8_2 = mysqli_query ($db_link, $sql8_2 );
 while( $row = mysqli_fetch_array ( $result8_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time7[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat7); ?>;
+var elapsedTime = <?php echo json_encode($time7); ?>;
     
     trace8 = {
   type: 'scatter',
@@ -621,18 +625,18 @@ $sql9_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result9_1 = mysqli_query ($db_link, $sql9_1 );
 while( $row = mysqli_fetch_array ( $result9_1 ) )
 {
-    $lat[] = $row['liste'];
+    $lat9[] = $row['liste'];
 }
 $sql9_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_9";
 $result9_2 = mysqli_query ($db_link, $sql9_2 );
 while( $row = mysqli_fetch_array ( $result9_2 ) )
 {
-    $time[] = $row['zeit'];
+    $time9[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat); ?>;
-var elapsedTime = <?php echo json_encode($time); ?>;
+var latit = <?php echo json_encode($lat9); ?>;
+var elapsedTime = <?php echo json_encode($time9); ?>;
     
     trace9 = {
   type: 'scatter',
