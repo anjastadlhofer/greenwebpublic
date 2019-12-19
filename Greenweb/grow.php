@@ -747,7 +747,7 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             
 
                 if(s == "schneller"|| s == "mittlerer"|| s== "langsamer"){
-                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
+                    document.getElementById("result").innerHTML = "Wattverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
                     document.getElementById("ausgabe").innerHTML = "Es werden " + count + " Bäume in " + laenge + "h benötigt um den CO2 Verbrauch auszugleichen!";
                     document.getElementById('plot').style.display ='block';
                     undo();

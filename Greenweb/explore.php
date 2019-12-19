@@ -46,11 +46,11 @@
 	text-decoration:none;
 	font-family:Arial;
 	font-size:16px;
-	border:2px solid #5BBB2B;
-	border-bottom:1px solid #5BBB2B;
-	border-right:1px solid #5BBB2B;
+	border:2px solid #3E801D;
+	border-bottom:1px solid #3E801D;
+	border-right:1px solid #3E801D;
 	border-radius:15px 5px;
-	color:#5BBB2B;
+	color:#3e801d;
 	background-color:#C0E9B5;
 	padding:5px 10px;
 }
@@ -59,8 +59,12 @@
 	color:#4A9824;
 	border-radius:5px 15px;
 }
-button:focus
-{outline:0 !important;}
+button:focus{
+    border-color:#4A9824;
+	color:#3e801d;
+	border-radius:5px 15px;
+    background-color:#84cf70;
+    }
 
 </style>
 <!-- Resources -->
