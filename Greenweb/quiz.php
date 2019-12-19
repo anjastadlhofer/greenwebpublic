@@ -147,14 +147,14 @@ var quiz = {
     // Instead of creating elements, we can also directly alter the inner HTML
     var html = "<h1>";
     if (percent>=0.7) {
-      html += "Sehr gut!";
+      html += "WELL DONE!";
     } else if (percent>=0.4) {
-      html += "Nicht Schlecht!";
+      html += "NOT BAD!";
     } else {
-      html += "Vielleicht beim Nächsten Besuch unserer Website!";
+      html += "TRY HARDER!";
     }
     html += "</h1>";
-    html += "<div>Du hast " + score + " von " + total + " erreicht.</div>";
+    html += "<div>You scored " + score + " out of " + total + ".</div>";
     document.getElementById("quiz-wrap").innerHTML = html;
   }
 };
