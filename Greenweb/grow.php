@@ -41,7 +41,7 @@
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">   
              <p> 
-                 Um zu sehen wie viele Bäume mit dem Streaming beansprucht werden wähle eine Qualität und eine Geschwindigkeit aus. Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                 Um zu sehen wie viele Bäume mit dem Streaming beansprucht werden wähle eine Qualität und eine Geschwindigkeit aus. Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
               <form>
   <h3>Wähle die Qualität des Streams aus:</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
@@ -56,8 +56,8 @@
                 <h3>Wähle die Länge des Streams aus:</h3><br>
                 <select id="choice" onchange="show1()">
                    <option value="1">Game of Thrones Folge (1h)</option>
-                   <option value="2.3">Avengers End Game (3h)</option>
-                   <option value="16.">Serien Marathon (24h)</option>
+                   <option value="3">Avengers End Game (3h)</option>
+                   <option value="24">Serien Marathon (24h)</option>
                 </select>
             </from>
                 <form>            <br>
