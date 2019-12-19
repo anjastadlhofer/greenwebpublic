@@ -46,14 +46,14 @@
     a : 4
   },
   {
-    q : "Wie viele Bäume werden bei Streamen über eine Stunde bei einer Auflösung von 1920x1080 (HD) und einer langsamen Komprimierung beansprucht?",
+    q : "Wie viele Bäume werden beim Streamen einer Folge Game of Thrones (1h) bei einer Auflösung von 1920x1080 (HD) und einer schnellen Kodierungsgeschwindigkeit beansprucht?",
     o : [
-      "400 pounds",
-      "550 pounds",
-      "700 pounds",
-      "750 pounds"
+      "30 Bäume",
+      "21 Bäume",
+      "12 Bäume",
+      "10 Bäume"
     ],
-    a : 2
+    a : 3
   },
   {
     q : "Von wie vielen Servern werden Daten erhalten wenn man die Kronen Zeitung aufruft?",
