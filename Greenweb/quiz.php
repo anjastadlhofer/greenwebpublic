@@ -20,7 +20,8 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="quiz">
       <div class="w-100">
         <h2 class="mb-5">Quiz</h2>
-        <h3 class="subheading mb-3">Um all die neuen Informationen noch zu festigen, hier ein kleines Quiz! </h3>
+          <h3 class="mb-0">Hast du dir alles gemerkt?</h3>
+        <h3 class="subheading mb-3"></h3>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <div class="subheading mb-3"></div>
@@ -46,7 +47,7 @@
     a : 4
   },
   {
-    q : "Wie viele Bäume werden beim Streamen einer Folge Game of Thrones (1h) bei einer Auflösung von 1920x1080 (HD) und einer schnellen Kodierungsgeschwindigkeit beansprucht?",
+    q : "Wie viele Bäume werden in 1h beansprucht um eine Folge Game of Thrones bei einer Auflösung von 1920x1080 (HD) und einer schnellen Kodierungsgeschwindigkeit zu streamen?",
     o : [
       "30 Bäume",
       "21 Bäume",
