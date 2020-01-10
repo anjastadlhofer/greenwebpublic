@@ -42,10 +42,10 @@
   user-select: none;
 }
 
-/* The actual popup (appears on top) */
+    /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 700px;
+  width: 600px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -56,19 +56,10 @@
   top: -50%;
   right: 100%;
   margin-left: -80px;
+    text-align:justify;
+    padding: 30px;
 }
 
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  left: 100%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent #555;
-}
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
@@ -122,7 +113,25 @@
             <span class="text-primary">
                 <div class="popup" onclick="myFunction1()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup1">
-                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                        Durch die verschiedenen Auflösungen und Qualitäten ergeben sich verschiedene Messungen.
+Bei der Qualität wird die Kodierungsgeschwindigkeit berücksichtigt, das heißt eine schnelle
+Kodierungsgeschwindigkeit resultiert in einer schlechteren Qualität. Umgekehrt bedeutet eine langsame 
+Kodierungsgeschwindigkeit eine gute Qualität. Die Kodierungsgeschwindigkeit 
+steht im Verhältnis zur Komprimierung, das heißt umso langsamer die Kodierungsgeschwindigkeit, 
+desto besser ist die Komprimierung und somit die Qualität. Eine bessere Auflösung hingegen erfordert
+eine größere Menge an übertragenen Daten und somit einen höheren Ressourcenverbrauch. 
+<br>
+Die Idee dieser Visualisierung ist zu veranschaulichen wie viele Bäume den CO2 Verbrauch ausgleichen 
+müssen, um dieses Streamingvergnügen wieder gut zu machen. Hierbei wurden zuerst die verbrauchten Kilowattstunden 
+des Streamingservers ermittelt. Dann wurde mit einer Bitrate von 6000 Bit/s, die übertragenenen Bytes ermittelt.
+Somit konnte mit einem fixen Wert aus diversen Studien von 0,06 kWh/GB die benötigten Kilowattstunden für dieses Video ermittelt wurden.
+Hierbei ist anzumerken, dass sich der ermittelte Stromverbrauch nur von Server und Übertragungsweg zusammensetzt.
+Andere Stromfresser, wie das eigene Gerät oder externe Server und deren Kühlung werden nicht berücksichtigt.
+<br>
+Aus diesen benötigten Kilowattstunden wurde der CO2 Verbrauch berechnet mit einem fixen Wert von 100,27 g CO2/kWh. 
+Dieser Wert stammt von e-Control und beschreibt wieviel Gramm CO2 Österreich pro verbrauchter kWh produziert.
+Somit ergibt sich ein CO2-Wert, der mit dem eines Baumes verglichen wurde. Dadurch wurde die Anzahl an Bäumen ermittelt,
+die 1h brauchen um das produzierte CO2 des jeweiligen Streams zu kompensieren. Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
                     </span>
                 </div>
               </span>
@@ -135,6 +144,7 @@ function myFunction1() {
   var popup = document.getElementById("myPopup1");
   popup.classList.toggle("show");
 }
+
 </script>
                  
                  
@@ -170,6 +180,7 @@ function myFunction1() {
           </div>
             <br>
                 <h3 id="ausgabe" class="mb-0" class="hide"></h3>
+          <br>
                 <div id="plot" class ="hide">
                 <div class="container">
                   <img id="pic" src="img/tree.png">
@@ -178,6 +189,7 @@ function myFunction1() {
                     
                    </div>
                     <h3 id="result"></h3>
+                    Folgender Graph zeigt den Wattverbrauch in der jeweiligen Sekunde an, den der Streamingserver benötigt. Der anfangs niedrige Wert kommt durch die IDLE-Zeit zustande, wo der Server nicht vom Client beansprucht wird. Dann wurde ein Video für ca. 60 Sekunden gestreamt und die dafür verbrauchten Watt werden hier dargestellt. 
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>

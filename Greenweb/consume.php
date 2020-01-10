@@ -7,6 +7,41 @@
             padding-bottom: 40px;
             background-color: #C0E9B5; 
     }
+     /* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 600px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  top: -50%;
+  right: 100%;
+  margin-left: -80px;
+    text-align:justify;
+    padding: 30px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}  
 </style>
 <!---   #d8f0e8;-->
 
@@ -49,7 +84,7 @@
             <span class="text-primary">
               <div class="popup" onclick="myFunction4()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup4">
-                        Mit dem Besuch auf dieser Website wurde die beiden Counter gestartet. Bei diesen kann man erkennen, wie viele Ressourcen in der Zwischenzeit produziert wurden.
+                        Mit dem Besuch auf dieser Website wurde die beiden Counter gestartet. Bei diesen kann man erkennen, wie viele Ressourcen in der Zwischenzeit produziert wurden. Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
                     </span>
                 </div></span>
           </div>

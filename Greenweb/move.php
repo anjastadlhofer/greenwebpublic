@@ -33,10 +33,10 @@ button:focus
   user-select: none;
 }
 
-/* The actual popup */
+    /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 450px;
+  width: 600px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -47,18 +47,8 @@ button:focus
   top: -50%;
   right: 100%;
   margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 100%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent #555 transparent transparent;
+    text-align:justify;
+    padding: 30px;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -112,7 +102,13 @@ button:focus
             <span class="text-primary">
               <div class="popup" onclick="myFunction2()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup2">
-                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                        Bei dieser Visualisierung wurde 1h eines Streaming Videos betrachtet und mit den möglichen gefahrenen Kilometern, der einzelnen
+Fortbewegungsmitteln verglichen. Hierbei wurde eine Bitrate von 6000 kbps gewählt mit einer Auflösung von 1920x1080 und mittlerer Kodierungsgeschwindigkeit.
+Für dies wurden die benötigten kwh der Bytes für die Übertragung berechnet mit einem fixen Wert aus Studien von 0,06 kWh/GB.
+Weiters wurden die verbrauchten kWh des Streaming-Servers ermittelt. Mit dieser Summe wurde der Wert der verbrauchten Gramm CO2 berechnet.
+Aus diversen Studien wurden die benötigten g CO2 pro Kilometer für die jeweiligen Fortbewegungsmittel recherchiert. Somit konnte ein Vergleich 
+zwischen Fortbewegungsmittel und Streamingvideo aufgestellt werden und die möglichen Kilometer statt des Streamings berechnet werden. 
+                        Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
                     </span>
                 </div></span>
           </div>

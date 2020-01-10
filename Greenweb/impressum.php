@@ -26,7 +26,7 @@
               <li><b>Marcel Kahr</b></li>
               <li><b>Tom Kleinhapl</b></li><br><br>
 
-              Dieses Projekt wurde im Auftrag der FH Joanneum erstellt. <br>
+              Dieses Projekt wurde im Auftrag der FH Joanneum erstellt. <br><br>
                <a href="https://www.fh-joanneum.at/" target="_blank"><img src="img/FH.jpg" width= 60%></a>
                
             </p>  

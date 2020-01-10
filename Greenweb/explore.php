@@ -1,32 +1,38 @@
- <hr class="m-0">
+<hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="explore">
       <div class="w-100">
         <h2 class="mb-5">Explore</h2>
+          
+          
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            
-            <h3 class="mb-0">Ein Websitenaufruf, so viele Server ... </h3>
+            <h3 class="mb-0">Ein Webseitenaufruf, so viele Server... </h3>
+
             <div class="subheading mb-3"></div>
-            <p>
-              
-                <div id="lb" >
-                  <div id="lb-title" style="text-align:justify">
+                 <p>
 				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen.
-                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen.
-
-
-                  </div>
-				 </p>
-              <div class="resume-date text-md-right">
+                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen. 
+                     
+                     </p>
+              
+          </div>
+            
+          
+          <div class="resume-date text-md-right">
             <span class="text-primary">
               <div class="popup" onclick="myFunction3()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup3">
-                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                        Durch die Tools "Lightbeam" und in weiterer Folge "utrace" wurde herausgefunden, 
+dass wenn eine bestimmte Website aufgerufen wird nicht nur der Webserver, der die Seite hostet, sondern auch noch viele andere Server kontaktiert werden. Diese Server werden aufgerufen um weitere Scripts, Texte, Bilder, Videos, Werbungen und andere Komponenten wie zum Beispiel Google Maps oder auch Google Analytics zu bekommen. Bei dieser Visualisierung soll aufgezeigt werden wie viele Server bei einem einzigen Webseitenaufruf inkludiert sind. Nebenbei wird mittels utrace der Standort dieser Server angezeigt um damit auch den Weg der Informationen aufzuzeigen. Dabei soll auch beachtet werden, dass aufgrund der dauerhaften Verf&uuml;gbarkeit der Webseite die Server st&auml;ndig in Betrieb sein m&uuml;ssen und somit Strom verbrauchen. Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>. 
+                        
                     </span>
                 </div></span>
           </div>
+        </div>
+          
+
                     <div id="lb-text">
-				   <br>
+				
 				   <button type="button" class="buttonstart" id="btn-wiki" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button> <br>
 				   
 				   <button type="button" class="buttonstart" id="btn-amazon" onClick="map_amazon()"> Let's shop on Amazon (www.amazon.de) </button> <br>
@@ -71,6 +77,42 @@ button:focus{
 	border-radius:5px 15px;
     background-color:#84cf70;
     }
+    
+    /* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 600px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  top: -50%;
+  right: 100%;
+  margin-left: -80px;
+    text-align:justify;
+    padding: 30px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}  
 
 </style>
 <!-- Resources -->
