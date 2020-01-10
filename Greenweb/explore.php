@@ -8,15 +8,24 @@
             <h3 class="mb-0">Ein Websitenaufruf, so viele Server ... </h3>
             <div class="subheading mb-3"></div>
             <p>
+              
                 <div id="lb" >
                   <div id="lb-title" style="text-align:justify">
 				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen.
                       Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen.
 
 
-
                   </div>
-				  <div id="lb-text">
+				 </p>
+              <div class="resume-date text-md-right">
+            <span class="text-primary">
+              <div class="popup" onclick="myFunction3()"><div class="infoText">i</div>
+                    <span class="popuptext" id="myPopup3">
+                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                    </span>
+                </div></span>
+          </div>
+                    <div id="lb-text">
 				   <br>
 				   <button type="button" class="buttonstart" id="btn-wiki" onClick="map_wikipedia()"> Einmal nachlesen auf Wikipedia (www.wikipedia.org)  </button> <br>
 				   
@@ -26,12 +35,9 @@
 				   <br>
 
 				   <div id="lb-text-map" style="display:none; ">  </div>
-
-				   <p>
-
                   </div>
 				  <div id="chartdiv" >  </div>
-				  
+				 
 				  
 				  <!-- Styles hier die größe der Karte eintragen-->
 <style>
@@ -75,7 +81,13 @@ button:focus{
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 <!-- Chart code -->
 
-
+<script>
+// When the user clicks on <div>, open the popup
+function myFunction3() {
+  var popup = document.getElementById("myPopup3");
+  popup.classList.toggle("show");
+}
+</script>
 <script>
 //---------------- START MAP MIT WIKIPEDIA, insgesamt 3
 function map_wikipedia() {

@@ -29,147 +29,42 @@
   width: 60%;
         text-align: left;
     }
-
-    
- /* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-    -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 700px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  top: -50%;
-  right: 100%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  left: 100%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent #555;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-.infoText
-{
-    color: white;
-    font-family: "Times New Roman", Times, serif;
-    font-style: italic; 
-    font-size: 30px;
-    border-style: solid;
-    border-radius: 80px;
-    width:50px;
-    height:50px;
-    background-color:RGB(48,173,35);
-    text-align: center;
-}
 </style> 
 
 <hr class="m-0">
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="grow">
-      <div class="w-100">                
-        <h2 class="mb-5">Grow</h2>
-                           
-    
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Streaming Auswertung</h3>
-            <div class="subheading mb-3"></div>
-           <p>
-                  Um zu sehen wie viele Bäume benötigt werden um den CO2 Verbrauch, der mit dem Streaming verursacht wurde, auszugleichen wähle eine Auflösung und eine Qualität deiner bevorzugten Länge aus. 
-                 
-
-            </p>  
-          </div>
-          <div class="resume-date text-md-right">             
-            <span class="text-primary">
-                <div class="popup" onclick="myFunction1()"><div class="infoText">i</div>
-                    <span class="popuptext" id="myPopup1">
-                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
-                    </span>
-                </div>
-              </span>
-          </div>
-        </div>
-                 
-<script>
-// When the user clicks on <div>, open the popup
-function myFunction1() {
-  var popup = document.getElementById("myPopup1");
-  popup.classList.toggle("show");
-}
-</script>
-                 
-                 
-                 
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="streaming">
+      <div class="w-100">
+        <h2 class="mb-5">Streaming</h2>
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">   
+             <p> 
               <form>
-  <h3>Wähle die Auflösung des Streams aus:</h3><br>
+  <h3>Wähle die Qualität des Streams aus:</h3><br>
   <input type="radio" name="quality" value="1920" onclick="show1();"/> 1920x1080 (HD)<br>
   <input type="radio" name="quality" value="1280" onclick="show1();"/> 1280x720<br>
   <input type="radio" name="quality" value="640" onclick="show1();"/> 640x360<br>
               </form>
           <br>
-                <div id="speed" class="hide">
-                <from>
-                     
+                <div id="test"></div>
+        <div id="speed" class="hide">
+                <form>
+    <h3>Wähle die Kodierungsgeschwindigkeit des Streams aus:</h3><br>
+  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schnell<br>
+  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
+  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Langsam<br>
+                </form>
+            <from>
                 <br>
                 <h3>Wähle die Länge des Streams aus:</h3><br>
                 <select id="choice" onchange="show1()">
-                   <option value="1">Game of Thrones Folge (1h)</option>
-                   <option value="3">Avengers End Game (3h)</option>
-                   <option value="24">Serien Marathon (24h)</option>
+                   <option value="1" name="1">Game of Thrones Folge (1h)</option>
+                   <option value="2.3" name="3">Avengers End Game (3h)</option>
+                   <option value="16" name="24">Serien Marathon (24h)</option>
                 </select>
             </from>
-                <br>
-                <div id="test"></div>
-                <form>
-                    <br>
-    <h3>Wähle die Qualität des Streams aus:</h3><br>
-  <input type="radio" name="speed1" value="schneller" onclick="show1();"/> Schlecht<br>
-  <input type="radio" name="speed1" value="mittlerer" onclick="show1();"/> Mittel<br>
-  <input type="radio" name="speed1" value="langsamer" onclick="show1();"/> Gut<br>
-                </form>
-            
           </div>
             <br>
-                <h3 id="ausgabe" class="mb-0" class="hide"></h3>
+                <h3 id="title" class="mb-0" class="hide"><div id="result"></div></h3>
                 <div id="plot" class ="hide">
                 <div class="container">
                   <img id="pic" src="img/tree.png">
@@ -177,7 +72,7 @@ function myFunction1() {
                 <br>
                     
                    </div>
-                    <h3 id="result"></h3>
+                    <h3 id="ausgabe"></h3>
                     <div class="dia">
                     <div id="1920schneller" class="hide"></div>
                     <div id="1920mittlerer" class="hide"></div>
@@ -202,18 +97,18 @@ $sql1_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result1_1 = mysqli_query ($db_link, $sql1_1 );
 while( $row = mysqli_fetch_array ( $result1_1 ) )
 {
-    $lat2[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql1_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_2";
 $result1_2 = mysqli_query ($db_link, $sql1_2 );
 while( $row = mysqli_fetch_array ( $result1_2 ) )
 {
-    $time2[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit1 = <?php echo json_encode($lat2); ?>;
-var elapsedTime1 = <?php echo json_encode($time2); ?>;
+var latit1 = <?php echo json_encode($lat); ?>;
+var elapsedTime1 = <?php echo json_encode($time); ?>;
     
     trace1 = {
   type: 'scatter',
@@ -257,18 +152,18 @@ $sql2_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result2_1 = mysqli_query ($db_link, $sql2_1 );
 while( $row = mysqli_fetch_array ( $result2_1 ) )
 {
-    $lat1[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql2_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_1";
 $result2_2 = mysqli_query ($db_link, $sql2_2 );
 while( $row = mysqli_fetch_array ( $result2_2 ) )
 {
-    $time1[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat1); ?>;
-var elapsedTime = <?php echo json_encode($time1); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace2 = {
   type: 'scatter',
@@ -317,25 +212,26 @@ var layout = {
 Plotly.newPlot('1920mittlerer', data, {}, {showSendToCloud: true});
 </script>
       
+
               <?php
-$sql2_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_3";
-$result2_1 = mysqli_query ($db_link, $sql2_1 );
-while( $row = mysqli_fetch_array ( $result2_1 ) )
+$sql1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver_3";
+$result3_1 = mysqli_query ($db_link, $sql3_1 );
+while( $row = mysqli_fetch_array ( $result3_1 ) )
 {
-    $lat3[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
-$sql2_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_3";
-$result2_2 = mysqli_query ($db_link, $sql2_2 );
-while( $row = mysqli_fetch_array ( $result2_2 ) )
+$sql3_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_3";
+$result3_2 = mysqli_query ($db_link, $sql3_2 );
+while( $row = mysqli_fetch_array ( $result3_2 ) )
 {
-    $time3[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat3); ?>;
-var elapsedTime = <?php echo json_encode($time3); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
-    trace2 = {
+    trace3 = {
   type: 'scatter',
   x: elapsedTime,
   y: latit,
@@ -347,7 +243,7 @@ var elapsedTime = <?php echo json_encode($time3); ?>;
   }
 };
 
-var data = [trace2];
+var data = [trace3];
 var layout = {
    title: {
     text:'Plot Title',
@@ -381,8 +277,6 @@ var layout = {
 };
 Plotly.newPlot('1920langsamer', data, {}, {showSendToCloud: true});
 </script>
-            
-    
 
               
               <?php
@@ -390,18 +284,18 @@ $sql4_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result4_1 = mysqli_query ($db_link, $sql4_1 );
 while( $row = mysqli_fetch_array ( $result4_1 ) )
 {
-    $lat5[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql4_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_5";
 $result4_2 = mysqli_query ($db_link, $sql4_2 );
 while( $row = mysqli_fetch_array ( $result4_2 ) )
 {
-    $time5[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat5); ?>;
-var elapsedTime = <?php echo json_encode($time5); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace4 = {
   type: 'scatter',
@@ -457,18 +351,18 @@ $sql5_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result5_1 = mysqli_query ($db_link, $sql5_1 );
 while( $row = mysqli_fetch_array ( $result5_1 ) )
 {
-    $lat4[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql5_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_4";
 $result5_2 = mysqli_query ($db_link, $sql5_2 );
 while( $row = mysqli_fetch_array ( $result5_2 ) )
 {
-    $time4[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat4); ?>;
-var elapsedTime = <?php echo json_encode($time4); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace5 = {
   type: 'scatter',
@@ -523,18 +417,18 @@ $sql6_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result6_1 = mysqli_query ($db_link, $sql6_1 );
 while( $row = mysqli_fetch_array ( $result6_1 ) )
 {
-    $lat6[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql6_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_6";
 $result6_2 = mysqli_query ($db_link, $sql6_2 );
 while( $row = mysqli_fetch_array ( $result6_2 ) )
 {
-    $time6[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat6); ?>;
-var elapsedTime = <?php echo json_encode($time6); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace6 = {
   type: 'scatter',
@@ -590,18 +484,18 @@ $sql7_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result7_1 = mysqli_query ($db_link, $sql7_1 );
 while( $row = mysqli_fetch_array ( $result7_1 ) )
 {
-    $lat8[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql7_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_8";
 $result7_2 = mysqli_query ($db_link, $sql7_2 );
 while( $row = mysqli_fetch_array ( $result7_2 ) )
 {
-    $time8[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat8); ?>;
-var elapsedTime = <?php echo json_encode($time8); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace7 = {
   type: 'scatter',
@@ -656,18 +550,18 @@ $sql8_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result8_1 = mysqli_query ($db_link, $sql8_1 );
 while( $row = mysqli_fetch_array ( $result8_1 ) )
 {
-    $lat7[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql8_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_7";
 $result8_2 = mysqli_query ($db_link, $sql8_2 );
 while( $row = mysqli_fetch_array ( $result8_2 ) )
 {
-    $time7[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat7); ?>;
-var elapsedTime = <?php echo json_encode($time7); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace8 = {
   type: 'scatter',
@@ -723,18 +617,18 @@ $sql9_1 = "SELECT systemTotalWattage AS liste FROM streaming_smartmeter_hpserver
 $result9_1 = mysqli_query ($db_link, $sql9_1 );
 while( $row = mysqli_fetch_array ( $result9_1 ) )
 {
-    $lat9[] = $row['liste'];
+    $lat[] = $row['liste'];
 }
 $sql9_2 = "SELECT time AS zeit FROM streaming_smartmeter_hpserver_9";
 $result9_2 = mysqli_query ($db_link, $sql9_2 );
 while( $row = mysqli_fetch_array ( $result9_2 ) )
 {
-    $time9[] = $row['zeit'];
+    $time[] = $row['zeit'];
 }
 ?>
 <script>
-var latit = <?php echo json_encode($lat9); ?>;
-var elapsedTime = <?php echo json_encode($time9); ?>;
+var latit = <?php echo json_encode($lat); ?>;
+var elapsedTime = <?php echo json_encode($time); ?>;
     
     trace9 = {
   type: 'scatter',
@@ -802,7 +696,7 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             var stream = "";
             var q = "";
             var s = "";
-            var laenge = document.querySelector("#choice").value;
+            var laenge = document.getElementById("choice").name
             
             for(i = 0; i < ele.length; i++) { 
                 if(ele[i].checked){
@@ -845,8 +739,8 @@ Plotly.newPlot('640langsamer', data, {}, {showSendToCloud: true});
             
 
                 if(s == "schneller"|| s == "mittlerer"|| s== "langsamer"){
-                    document.getElementById("result").innerHTML = "Wattverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
-                    document.getElementById("ausgabe").innerHTML = "" + count + " Bäume kompensieren in 1h den CO2 Verbrauch, den du mit dieser Auswahl benötigen würdest.";
+                    document.getElementById("result").innerHTML = "Energieverbrauch von einem "+ q +"p Video mit "+ s +" Kodierungsgeschwindigkeit";
+                    document.getElementById("ausgabe").innerHTML = "Es werden " + count.toString + "Bäume in " + laenge " Stunden benötigt um den CO2 Verbrauch auszugleichen!";
                     document.getElementById('plot').style.display ='block';
                     undo();
                     document.getElementById(stream).style.display ='block';

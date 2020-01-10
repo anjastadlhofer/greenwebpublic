@@ -36,7 +36,7 @@ button:focus
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 160px;
+  width: 450px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -44,8 +44,8 @@ button:focus
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  bottom: 50%;
-  left: 50%;
+  top: -50%;
+  right: 100%;
   margin-left: -80px;
 }
 
@@ -53,12 +53,12 @@ button:focus
 .popup .popuptext::after {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
+  top: 10%;
+  left: 100%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: transparent #555 transparent transparent;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -80,9 +80,9 @@ button:focus
 }  
     
 .r{
-       align-content: right;
-    z-index: -1;
+
 }
+
     
 </style>
 
@@ -90,28 +90,34 @@ button:focus
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="move">
       <div class="w-100">
         <h2 class="mb-5">Move</h2>
+          
+          
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">Streaming Auswertung</h3>
+
             <div class="subheading mb-3"></div>
-           <p>
+                 <p>
               
             
                Schon eine Stunde zu streamen wirkt sich pro Gerät auf die Umwelt aus. Statt eine Stunde zu Streamen hätte man so weit mit den einzelnen Fortbewegungsmitteln fahren können. Aber sieh selbst! 
 
  
-            </p>  
+            </p>
+              
           </div>
+            
+          
           <div class="resume-date text-md-right">
-            <span class="text-primary"></span>
+            <span class="text-primary">
+              <div class="popup" onclick="myFunction2()"><div class="infoText">i</div>
+                    <span class="popuptext" id="myPopup2">
+                        Beachte jedoch, dass mit Geschwindigkeit nicht die Geschwindigkeit des Videos gemeint ist, sondern die Geschwindigkeit der Kodierung bzw. der Komprimierung. Je schneller kodiert wurde, desto schlechter ist die Qualität. Verändere anschließend auch noch die Länge deiner Streamingdauer und sieh selbst wie viele Bäume du für dieses belegst!
+                    </span>
+                </div></span>
           </div>
         </div>
-       
-<div align="right">
-<div class="popup" onclick="myFunction()"><img src="img/info.png" style="width:50px">
-  <span class="popuptext" id="myPopup">Popup text...</span>
-</div> 
-</div>
+    
           
 <p><button class="buttonstart" onclick="myMove(4,1,'byShow1')">Klicke, um die Kilometeranzahl eines <b>Dieselautos</b> zu erfahren!</button></p>       
 <div id ="container">
@@ -177,8 +183,8 @@ function myMove(fahrlaenge, id, byshow) {
    
 }
 // When the user clicks on div, open the popup
-function myFunction() {
-  var popup = document.getElementById("myPopup");
+function myFunction2() {
+  var popup = document.getElementById("myPopup2");
   popup.classList.toggle("show");
 }
 </script>
