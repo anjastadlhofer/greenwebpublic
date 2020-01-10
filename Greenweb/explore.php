@@ -129,7 +129,7 @@ var marker = imageTemplate.createChild(am4core.Sprite);
 marker.path = targetSVG;
 marker.horizontalCenter = "middle";
 marker.verticalCenter = "middle";
-marker.scale = 0.7;
+marker.scale = 0.9;
 marker.fill = interfaceColors.getFor("alternativeBackground");
 
 imageTemplate.propertyFields.latitude = "latitude";
@@ -255,7 +255,7 @@ var marker = imageTemplate.createChild(am4core.Sprite);
 marker.path = targetSVG;
 marker.horizontalCenter = "middle";
 marker.verticalCenter = "middle";
-marker.scale = 0.7;
+marker.scale = 0.9;
 marker.fill = interfaceColors.getFor("alternativeBackground");
 
 imageTemplate.propertyFields.latitude = "latitude";
@@ -542,7 +542,7 @@ var marker = imageTemplate.createChild(am4core.Sprite);
 marker.path = targetSVG;
 marker.horizontalCenter = "middle";
 marker.verticalCenter = "middle";
-marker.scale = 0.7;
+marker.scale = 0.9;
 marker.fill = interfaceColors.getFor("alternativeBackground");
 
 imageTemplate.propertyFields.latitude = "latitude";
