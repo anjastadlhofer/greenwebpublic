@@ -25,7 +25,7 @@
 				   <button type="button" class="buttonstart" id="btn-krone" onClick="map_krone()"> Was gibt es neues? (www.krone.at)  </button> 
 				   <br>
 
-				   <div id="lb-text-map" style="display:none;">  </div>
+				   <div id="lb-text-map" style="display:none; ">  </div>
 
 				   <p>
 
@@ -37,7 +37,7 @@
 <style>
 #chartdiv { 
   width: 100%;
-  height: 400px;
+ 
 }
 
 .buttonstart{
@@ -84,6 +84,10 @@ am4core.ready(function() {
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
 x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Server Daten empfangen. Hier sieht man wo die sich befinden:";
+
+//map zeigen
+var y = document.getElementById("chartdiv");
+y.style.height = "400px";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -210,6 +214,10 @@ am4core.ready(function() {
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
 x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Server Daten empfangen,. Hier sieht man wo die sich befinden:";
+
+//map zeigen
+var y = document.getElementById("chartdiv");
+y.style.height = "400px";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -497,6 +505,10 @@ am4core.ready(function() {
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
 x.innerHTML = "Beim Aufruf der Startseite von der Krone von <b> 42 </b> verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
+
+//map zeigen
+var y = document.getElementById("chartdiv");
+y.style.height = "400px";
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
