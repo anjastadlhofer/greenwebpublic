@@ -1,22 +1,22 @@
 #container {
   width: 100%;
-  height: 100px;
+  height: 15px;
   position: relative;
 
 }
 .animate {
   width: 200px;
-  height: 50px;
+  height: 60px;
   position: absolute;
 }
 
 img {
-    margin-top: 70px;
+    margin-top: -15px;
 }
 
 .rode1, .rode2 {
     width: 100%;
-    height: 20px;
+    height: 35px;
     background: #808080;
     margin: 0;
     
@@ -28,4 +28,39 @@ img {
 
 .rode2 {
     border-top: 2px dashed #ffffff;
+}
+
+#byShow1{
+    position: relative;
+    top: -30px;
+}
+
+#byShow2{
+    position: relative;
+    top: -30px;
+}
+
+#byShow3{
+    position: relative;
+    top: -30px;
+}
+
+#byShow4{
+    position: relative;
+    top: -30px;
+}
+
+#byShow5{
+    position: relative;
+    top: -30px;
+}
+
+#byShow6{
+    position: relative;
+    top: -50px;
+}
+
+.sechs{
+    position: relative;
+    top: -10px;
 }

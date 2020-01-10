@@ -11,7 +11,7 @@
 	border-radius:15px 5px;
 	color:#5BBB2B;
 	background-color:#C0E9B5;
-	padding:5px 10px;
+	padding:5px;
     
 }
 .buttonstart:hover{
@@ -21,6 +21,68 @@
 }
 button:focus 
 {outline:0 !important;}
+    
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}  
+    
+.r{
+       align-content: right;
+    z-index: -1;
+}
     
 </style>
 
@@ -44,8 +106,13 @@ button:focus
             <span class="text-primary"></span>
           </div>
         </div>
+       
+<div align="right">
+<div class="popup" onclick="myFunction()"><img src="img/info.png" style="width:50px">
+  <span class="popuptext" id="myPopup">Popup text...</span>
+</div> 
+</div>
           
-    
 <p><button class="buttonstart" onclick="myMove(4,1,'byShow1')">Klicke, um die Kilometeranzahl eines <b>Dieselautos</b> zu erfahren!</button></p>       
 <div id ="container">
 <div class ="animate" id="1"><img src="img/carBLUE.png" width="100"><span id="byShow1" style="visibility:hidden;">125m</span></div>
@@ -83,11 +150,12 @@ button:focus
   <br>
 <p><button class="buttonstart" onclick="myMove(25,6,'byShow6')">Ist der <b>Bus</b> wirklich das umweltverträglichste Fortbewegungsmittel?</button></p>        
 <div id ="container">
-<div class ="animate" id="6"><img src="img/bus.png" width="100"><span id="byShow6" style="visibility:hidden;">490m</span></div>
+<div class ="animate" id="6"><img src="img/bus.png" class="sechs" width="140"><span id="byShow6" style="visibility:hidden;">490m</span></div>
 </div>       
 <div class="rode1"></div>
 <div class="rode2"></div>
-        
+          
+          
 <script>
 function myMove(fahrlaenge, id, byshow) {
         document.getElementById(byshow).style.visibility = "hidden";
@@ -105,9 +173,13 @@ function myMove(fahrlaenge, id, byshow) {
         
     }
       
-  }
-    
+  }    
    
+}
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
 </script>
         
