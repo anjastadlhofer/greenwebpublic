@@ -121,17 +121,16 @@ steht im Verhältnis zur Komprimierung, das heißt umso langsamer die Kodierungs
 desto besser ist die Komprimierung und somit die Qualität. Eine bessere Auflösung hingegen erfordert
 eine größere Menge an übertragenen Daten und somit einen höheren Ressourcenverbrauch. 
 <br>
-Die Idee dieser Visualisierung ist zu veranschaulichen wie viele Bäume den CO2 Verbrauch ausgleichen 
+Die Idee dieser Visualisierung ist es, zu veranschaulichen wie viele Bäume den CO2 Verbrauch ausgleichen 
 müssen, um dieses Streamingvergnügen wieder gut zu machen. Hierbei wurden zuerst die verbrauchten Kilowattstunden 
 des Streamingservers ermittelt. Dann wurde mit einer Bitrate von 6000 Bit/s, die übertragenenen Bytes ermittelt.
-Somit konnte mit einem fixen Wert aus diversen Studien von 0,06 kWh/GB die benötigten Kilowattstunden für dieses Video ermittelt wurden.
+Somit konnte mit einem fixen Wert aus diversen <a href = "https://onlinelibrary.wiley.com/doi/epdf/10.1111/jiec.12630">Studien von 0,06 kWh/GB</a> die benötigten Kilowattstunden für dieses Video ermittelt werden.
 Hierbei ist anzumerken, dass sich der ermittelte Stromverbrauch nur von Server und Übertragungsweg zusammensetzt.
-Andere Stromfresser, wie das eigene Gerät oder externe Server und deren Kühlung werden nicht berücksichtigt.
+Andere Stromverbraucher, wie das eigene Gerät oder externe Server und deren Kühlung werden nicht berücksichtigt.
 <br>
-Aus diesen benötigten Kilowattstunden wurde der CO2 Verbrauch berechnet mit einem fixen Wert von 100,27 g CO2/kWh. 
-Dieser Wert stammt von e-Control und beschreibt wieviel Gramm CO2 Österreich pro verbrauchter kWh produziert.
+Aus diesen benötigten Kilowattstunden wurde der CO2 Verbrauch berechnet mit einem <a href= "https://www.e-control.at/documents/1785851/0/Stromkennzeichnungsbericht_FINAL.pdf/66d28c2c-1896-17ce-1dca-99c98886122b?t=1569481732421%20(Seite%2030)">fixen Wert von 100,27 g CO2/kWh.<a/> Dieser Wert stammt von e-Control und beschreibt wieviel Gramm CO2 Österreich pro verbrauchter kWh produziert.
 Somit ergibt sich ein CO2-Wert, der mit dem eines Baumes verglichen wurde. Dadurch wurde die Anzahl an Bäumen ermittelt,
-die 1h brauchen um das produzierte CO2 des jeweiligen Streams zu kompensieren. Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
+die 1h brauchen um das produzierte CO2 des jeweiligen Streams zu kompensieren. Genauere Informationen befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
                     </span>
                 </div>
               </span>
