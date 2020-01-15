@@ -11,7 +11,8 @@
             <div class="subheading mb-3"></div>
                  <p>
 				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen.
-                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen. 
+                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen. <br>
+                     Probiere die Karte aus und sieh selbst!
                      
                      </p>
               
@@ -22,8 +23,8 @@
             <span class="text-primary">
               <div class="popup" onclick="myFunction3()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup3">
-                        Durch die Tools "Lightbeam" und in weiterer Folge "utrace" wurde herausgefunden, 
-dass wenn eine bestimmte Website aufgerufen wird nicht nur der Webserver, der die Seite hostet, sondern auch noch viele andere Server kontaktiert werden. Diese Server werden aufgerufen um weitere Scripts, Texte, Bilder, Videos, Werbungen und andere Komponenten, wie zum Beispiel Google Maps oder auch Google Analytics zu bekommen. Bei dieser Visualisierung soll aufgezeigt werden, wie viele Server bei einem einzigen Webseitenaufruf inkludiert sind. Nebenbei wird mittels utrace der Standort dieser Server angezeigt, um damit auch den Weg der Informationen aufzuzeigen. Dabei soll auch beachtet werden, dass aufgrund der dauerhaften Verf&uuml;gbarkeit der Webseite die Server st&auml;ndig in Betrieb sein m&uuml;ssen und somit Strom verbrauchen. Genauere Informationen befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>. 
+                        Mit den Tools "Lightbeam" und in weiterer Folge "utrace" wurden alle Server und deren Standorte ermittelt, die bei einem Webseitenaufruf
+                        kontaktiert werden. Diese Server werden aufgerufen um weitere Scripts, Texte, Bilder, Videos, Werbungen und andere Komponenten, wie zum Beispiel Google Maps oder auch Google Analytics zu bekommen. Bei dieser Visualisierung soll aufgezeigt werden, wie viele Server bei einem einzigen Webseitenaufruf inkludiert sind. Nebenbei wird mittels utrace der Standort dieser Server angezeigt, um damit auch den Weg der Informationen aufzuzeigen. Dabei soll auch beachtet werden, dass aufgrund der dauerhaften Verf&uuml;gbarkeit der Webseite die Server st&auml;ndig in Betrieb sein m&uuml;ssen und somit Strom verbrauchen. Genauere Informationen befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>. 
                         
                     </span>
                 </div></span>
@@ -137,7 +138,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");
@@ -267,7 +268,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Server Daten empfangen,. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");
@@ -558,7 +559,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Aufruf der Startseite von der Krone von <b> 42 </b> verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Aufruf der Startseite von der Krone werden von <b> 42 </b> verschiedenen Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");

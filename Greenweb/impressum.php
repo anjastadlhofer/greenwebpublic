@@ -11,17 +11,17 @@
             Alle Messdaten für die Berechnungen und Annahmen wurden selbstständig generiert durch einen Aufbau eines Testnetzwerkes. 
                Für die Umrechnungen wurden diverse Studien des österreichischen Strommixes, etc. zur Hand genommen. 
                Nähere Informationen finden Sie in den beiden Dokumentationen:<br>
-               <li>Doku Greenweb</li>
-               <li><a href="pdf/GreenWebPrototype.pdf" download>Dokumentation GreenWebPrototype</a></li>
+               <li>Weitere Informationen zu Stromverbrauch, CO2-Verbrauch, Messungen und Auswertungen</li>
+               <li><a href="pdf/GreenWebPrototype.pdf" download>Weitere Informationen zu Streaming und Netzaufbau</a></li>
                
             <br> 
-              Projektleitung "GreenWeb": <b>Gerhard Sprung, MSc</b><br>
+              Projektleitung "GreenWeb" (Webseitenauswertung, Visualisierung): <b>Gerhard Sprung, MSc</b><br>
               Studierendenteam beim Projekt "GreenWeb" und verantwortlich für diese Website:<br>
               <li><b>Julia Gruber</b></li>
               <li><b>Lukas Reitbauer</b></li>
               <li><b>Anja Stadlhofer</b></li><br>
              <br>
-              Projektleitung "GreenWebPrototype": <b>DI Georg Mittenecker</b><br>
+              Projektleitung "GreenWebPrototype" (Netzaufbau, Streaming): <b>DI Georg Mittenecker</b><br>
               Studierendenteam beim Projekt "GreenWebPrototype" und verantwortlich für die Infrastruktur zur Generierung der Daten:<br>
               <li><b>Colin Jochum</b></li>
               <li><b>Marcel Kahr</b></li>

@@ -125,7 +125,8 @@ Die Idee dieser Visualisierung ist es, zu veranschaulichen wie viele Bäume den 
 müssen, um dieses Streamingvergnügen wieder gut zu machen. Hierbei wurden zuerst die verbrauchten Kilowattstunden 
 des Streamingservers ermittelt. Dann wurde mit einer Bitrate von 6000 Bit/s, die übertragenenen Bytes ermittelt.
 Somit konnte mit einem fixen Wert aus diversen <a href = "https://onlinelibrary.wiley.com/doi/epdf/10.1111/jiec.12630" style="color: white;">Studien von 0,06 kWh/GB</a> die benötigten Kilowattstunden für dieses Video ermittelt werden.
-Hierbei ist anzumerken, dass sich der ermittelte Stromverbrauch nur von Server und Übertragungsweg zusammensetzt.
+Hierbei ist anzumerken, dass sich der ermittelte Stromverbrauch nur von Server und Übertragungsweg zusammensetzt. Als Übertragungstechnologie wurde Ethernet verwendet
+und auf WLAN und Funktechnologien verzichtet. 
 Andere Stromverbraucher, wie das eigene Gerät oder externe Server und deren Kühlung werden nicht berücksichtigt.
 <br>
 Aus diesen benötigten Kilowattstunden wurde der CO2 Verbrauch berechnet mit einem <a href= "https://www.e-control.at/documents/1785851/0/Stromkennzeichnungsbericht_FINAL.pdf/66d28c2c-1896-17ce-1dca-99c98886122b?t=1569481732421%20(Seite%2030)" style="color: white;">fixen Wert von 100,27 g CO2/kWh.<a/> Dieser Wert stammt von e-Control und beschreibt wieviel Gramm CO2 Österreich pro verbrauchter kWh produziert.
