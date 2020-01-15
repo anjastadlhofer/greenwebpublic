@@ -84,7 +84,7 @@
             <span class="text-primary">
               <div class="popup" onclick="myFunction4()"><div class="infoText">i</div>
                     <span class="popuptext" id="myPopup4">
-                        Mit dem Besuch auf dieser Website wurde die beiden Counter gestartet. Bei diesen kann man erkennen, wie viele Ressourcen in der Zwischenzeit produziert wurden. Genauere Informatione befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
+                        Mit dem Besuch auf dieser Website wurde diese beiden Counter gestartet. Bei denen kann man erkennen, wie viele Ressourcen in der Zwischenzeit produziert wurden.
                     </span>
                 </div></span>
           </div>
