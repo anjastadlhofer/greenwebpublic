@@ -54,7 +54,7 @@
             
             <h3 class="mb-0">Produzierte Resourcen</h3>
               <br>
-              Seit deinem Besuch auf dieser Website ist auf der Welt so einiges passiert:
+              Seit deinem Besuch auf dieser Website ist auf der Welt so einiges passiert. Beachte jedoch das jedes dieser produzierten Geräte wieder zum Datenverkehr beiträgt. Somit wird durch das Streamen und das Aufrufen von Websites mit diesen Endgeräten CO2 ausgestoßen.
             <div class="subheading mb-3"> </div>
               
             
@@ -63,14 +63,14 @@
                 
               <!-- text -->
                 <img src="img/smartphone2.png" height="200"><br>
-                Telefone produziert: <span id="mobilephoneCounter"></span>
+                Telefone produziert: <b><span style="color:black;  font-size: 25pt" id="mobilephoneCounter"></span></b>
               <br>
               Quelle: <a href="https://www.gartner.com/en">gartner.com</a> (1943 Mio Telefone pro Jahr 2016)
               <br>
                   </p>
                 <p class="solid">
                 <img src="img/monitor.png" height="200"><br>
-                Computer produziert: <span id="computerCounter"></span>
+                Computer produziert: <b><span style="color:black;  font-size: 25pt" id="computerCounter"></span></b>
               <br>
               Quelle: <a href="https://www.gartner.com/en">gartner.com</a> (473 Mio Computer pro Jahr 2016)
                     </p>
