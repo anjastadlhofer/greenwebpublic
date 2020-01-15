@@ -8,7 +8,8 @@
             <div class="subheading mb-3"></div>
            <p>
               Diese Website wurde im Zuge der <b>Bereichsübergreifende Projektarbeit</b> von <b>IMA17</b> erstellt.<br>
-            Alle Daten für die Berechnungen und Annahmen wurden selbstständig generiert durch einen Aufbau eines Testnetzwerkes. 
+            Alle Messdaten für die Berechnungen und Annahmen wurden selbstständig generiert durch einen Aufbau eines Testnetzwerkes. 
+               Für die Umrechnungen wurden diverse Studien des österreichischen Strommixes, etc. zur Hand genommen. 
                Nähere Informationen finden Sie in den beiden Dokumentationen:<br>
                <li>Doku Greenweb</li>
                <li><a href="pdf/GreenWebPrototype.pdf" download>Dokumentation GreenWebPrototype</a></li>
