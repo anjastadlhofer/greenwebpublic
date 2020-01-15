@@ -11,7 +11,8 @@
             <div class="subheading mb-3"></div>
                  <p>
 				  Beim Besuch einer einzigen Website werden von vielen anderen Servern auch Daten geladen.
-                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen. 
+                      Hier kannst du sehen wie viele Server bei dem Aufruf involviert sind und woher die Daten kommen. <br>
+                     Probiere die Karte aus und sieh selbst!
                      
                      </p>
               
@@ -137,7 +138,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Bei einem Aufruf eines Wikipediaartikel werden von <b> drei </b> Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");
@@ -267,7 +268,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Server Daten empfangen,. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Shoppen auf Amazon werden von <b> 14 </b> Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");
@@ -558,7 +559,7 @@ am4core.ready(function() {
 
 var x = document.getElementById("lb-text-map");
 x.style.display = "block";
-x.innerHTML = "Beim Aufruf der Startseite von der Krone von <b> 42 </b> verschiedenen Server Daten empfangen. Hier sieht man wo die sich befinden:";
+x.innerHTML = "Beim Aufruf der Startseite von der Krone werden von <b> 42 </b> verschiedenen Servern Daten empfangen. Hier sieht man, wo diese sich befinden:";
 
 //map zeigen
 var y = document.getElementById("chartdiv");
