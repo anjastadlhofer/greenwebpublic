@@ -11,7 +11,7 @@
             Alle Messdaten für die Berechnungen und Annahmen wurden selbstständig generiert durch einen Aufbau eines Testnetzwerkes. 
                Für die Umrechnungen wurden diverse Studien des österreichischen Strommixes, etc. zur Hand genommen. 
                Nähere Informationen finden Sie in den beiden Dokumentationen:<br>
-               <li>Weitere Informationen zu Stromverbrauch, CO2-Verbrauch, Messungen und Auswertungen</li>
+               <li><a href="pdf/GreenWeb.pdf" download>Weitere Informationen zu Stromverbrauch, CO2-Verbrauch, Messungen und Auswertungen</a></li>
                <li><a href="pdf/GreenWebPrototype.pdf" download>Weitere Informationen zu Streaming und Netzaufbau</a></li>
                
             <br> 

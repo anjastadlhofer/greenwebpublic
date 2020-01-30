@@ -108,7 +108,7 @@ Für dies wurden die benötigten kwh der Bytes für die Übertragung berechnet m
 Weiters wurden die verbrauchten kWh des Streaming-Servers ermittelt. Mit dieser Summe wurde der Wert der verbrauchten Gramm CO2 berechnet.
 Aus diversen Studien wurden die benötigten g CO2 pro Kilometer für die jeweiligen Fortbewegungsmittel recherchiert. Somit konnte ein Vergleich 
 zwischen Fortbewegungsmittel und Streamingvideo aufgestellt werden und die möglichen Kilometer statt des Streamings berechnet werden. 
-                        Genauere Informationen befinden sich in der Dokumentation im <a href = "#impressum" style="color: white;">Impressum</a>.
+                        Genauere Informationen befinden sich in der<a href="pdf/GreenWeb.pdf" download style="color:white;"> Dokumentation</a>.
                     </span>
                 </div></span>
           </div>
